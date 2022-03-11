@@ -215,7 +215,7 @@ song_11 : "Pengunggahan Dimulai\n\nKecepatan pengunggahan mungkin lambat. Harap 
 queue_1 : "Mohon Tunggu..Mengambil Antrian.."
 antrian_2 : "Tidak ada trek di dalam Antrian."
 queue_3 : "<u>**Trek Antrian:</u>** [Lihat Trek Antrian Lainnya Dari Sini]({0})"
-antrian_4 : "⏳ Ditambahkan ke Antrian di **#{0}\n\n💡Judul:** {1}\n**⏱Durasi:** {2}\n👤**Ditambahkan Oleh:** {3 }"
+antrian_4 : "⏳ Ditambahkan ke Antrian di **#{0}\n\n💡Judul:** {1}\n**⏱Durasi:** {2}\n👤**Ditambahkan Oleh:** {3}"
 
 # Semua Saluran Streaming
 stream_1 : "📡 **Memulai Streaming** 💡\n\n👤**Diminta Oleh:** {0}\n🔦**Informasi: **[Di Sini]({1})"
