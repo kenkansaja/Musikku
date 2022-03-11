@@ -7,8 +7,7 @@
 #
 # All rights reserved.
 
-from .database import *
-from .decorators import *
-from .formatters import *
-from .inline import *
-from .sys import *
+
+class AssistantErr(Exception):
+    def __init__(self, errr: str):
+        super().__init__(errr)
