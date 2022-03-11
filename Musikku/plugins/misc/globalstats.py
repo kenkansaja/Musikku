@@ -18,6 +18,7 @@ from pyrogram.errors import MessageIdInvalid
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, InputMediaPhoto)
 
+from pytgcalls.__version__ import __version__ as pytgver
 import config
 from config import BANNED_USERS, MUSIC_BOT_NAME
 from strings import get_command, get_string
@@ -520,6 +521,7 @@ async def overall_stats(client, CallbackQuery, _):
 
 **Python Version:** {pyver.split()[0]}
 **Pyrogram Version :** {pyrover}
+**Py-TgCalls Version :** {pytgver}
 
 **Storage Avail:** {total[:4]} GiB
 **Storage Used:** {used[:4]} GiB
