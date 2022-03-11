@@ -1,6 +1,6 @@
 {
     "name": "Musikku Music Bot",
-    "description": "Telegram Group Calls streaming bot with some useful features, written in Python with Pyrogram and Py-Tgcalls. Supporting platforms like Youtube, Spotify, Resso, AppleMusic, Soundcloud and M3u8 Links.",
+    "description": "Telegram Group Calls streaming bot dengan beberapa fitur berguna, ditulis dengan Python dengan Pyrogram dan Py-Tgcalls. Platform pendukung seperti Youtube, Spotify, Resso, AppleMusic, Soundcloud dan M3u8 Links.",
     "logo": "https://telegra.ph/file/7286ea5b5a2f8dc66e3ed.jpg",
     "keywords": [
     "python3",
@@ -14,22 +14,23 @@
     "stack": "container",
     "env": {
       "API_ID": {
-        "description": "Get this value from https://my.telegram.org",
+        "description": "Dapatkan nilai ini dari https://my.telegram.org",
         "value": "",
         "required": true
       },
       "API_HASH": {
-        "description": "Get this value from https://my.telegram.org",
+        "description": "Dapatkan nilai ini dari https://my.telegram.org",
         "value": "",
         "required": true
       },
       "AUTO_LEAVING_ASSISTANT": {
-        "description": "If you want your assistant to leave all chats automatically after some time.",
+        "description": "Jika Anda ingin asisten Anda meninggalkan semua obrolan secara otomatis setelah beberapa waktu, Isi True jika iya, Isi False Jika tidak",
         "value": "True",
         "required": true
       },
       "BOT_TOKEN": {
-        "description": "A Bot's token from Botfather",
+        "description": "Token Bot dari Botfather
+",
         "value": "",
         "required": true
       },
@@ -39,32 +40,32 @@
         "required": true
       },
       "MUSIC_BOT_NAME": {
-        "description": "A name for your Music Bot. Please don't use ascii characters",
+        "description": "Nama untuk Bot Musik Anda. Tolong jangan gunakan karakter ascii",
         "value": "",
         "required": true
       },
       "OWNER_ID": {
-        "description": "The user id(s) of user(s) whom you would like to add as a OWNER. Multiple values shall be seperated with a space.",
+        "description": "ID pengguna dari pengguna yang ingin Anda tambahkan sebagai PEMILIK. Beberapa nilai harus dipisahkan dengan spasi.",
         "value": "",
         "required": true
       },
       "STRING_SESSION": {
-        "description": "A Pyrogram String Session. One Assistant is Compulsory.",
+        "description": "Sesi String Pyrogram. Asisten Pertama adalah Wajib.",
         "value": "",
         "required": true
       },
       "HEROKU_API_KEY": {
-        "description": "Your Heroku account's API key",
+        "description": "Isi dengan Token Api heroku.",
         "value": "",
         "required": false
       },
       "HEROKU_APP_NAME": {
-        "description": "Your heroku app/bot's name",
+        "description": "Isi dengan nama sesuai app name pake huruf kecil.",
         "value": "",
         "required": false
       },
       "LOG_GROUP_ID": {
-        "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Use only Group. Please don't use Channel ID.",
+        "description": "ID Grup Log Anda, tambahkan bot Anda dan promosikan sebagai admin dengan hak penuh!. Gunakan hanya Grup. Tolong jangan gunakan ID Channel.",
         "value": "",
         "required": true
       },
@@ -83,12 +84,12 @@
         "required": true
       },
       "SUPPORT_CHANNEL": {
-        "description": "Support Channel Link if you have any, Leave blank if no support. Your link must start with https://t.me/",
+        "description": "Tautan Channel Dukungan jika ada, Biarkan kosong jika tidak ada dukungan. Tautan Anda harus dimulai dengan https://t.me/",
         "value": "t.me/musikkuchannel",
         "required": false
       },
       "SUPPORT_GROUP": {
-        "description": "Support Group Link if you have any, Leave blank if no support. Your link must start with https://t.me/",
+        "description": "Tautan Group Dukungan jika ada, Biarkan kosong jika tidak ada dukungan. Tautan Anda harus dimulai dengan https://t.me/",
         "value": "t.me/musikkugroup",
         "required": false
       }
