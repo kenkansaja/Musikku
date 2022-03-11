@@ -9,7 +9,7 @@
 
 from Musikku.core.bot import MusikkuBot
 from Musikku.core.dir import dirr
-from YukkiMusic.core.git import git
+from Musikku.core.git import git
 from Musikku.core.userbot import Userbot
 from Musikku.misc import dbb, heroku, sudo
 
