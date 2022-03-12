@@ -218,7 +218,8 @@ Total Used: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]
 
 <u>Remaining Quota:</u>
 Total Left: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]
-Day: Dynos heroku `{day}` **days** left"""
+
+» Dynos heroku `{day}` **days** left"""
     return await dyno.edit(text)
 
 
