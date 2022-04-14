@@ -23,25 +23,25 @@ installation() {
     pip3 install - U - r requirements.txt
 }
 clear
-pprint "Welcome to Musikku Bot Setup Installer\n\n"
-pprint "If you see any error during Installation Process, Please refer to these files for logs: "
-pprint "\nFor node js errors , Checkout nodelog.txt"
-pprint "\nFor pypi packages errors , Checkout pypilog.txt"
+pprint "Selamat datang di Penginstal Pengaturan Musikku Bot\n\n"
+pprint "Jika Anda melihat kesalahan selama Proses Instalasi, Silakan merujuk ke file-file ini untuk log:"
+pprint "\nUntuk kesalahan node js , Periksa nodelog.txt"
+pprint "\nUntuk kesalahan paket pypi, Periksa pypilog.txt"
 sleep 5
-pprint "\n\nStarting Update and Installing, Please dont Press any key till you are asked to type your values.\n\n"
+pprint "\n\nMemulai Pembaruan dan Instalasi, Mohon jangan Tekan sembarang tombol sampai Anda diminta untuk mengetikkan nilai Anda.\n\n"
 update & > /dev/null
-pprint "Update Has Been Completed, Now Installing  Necessory Packages!\n\n"
+pprint "Pembaruan Telah Selesai, Sekarang Menginstal Paket yang Diperlukan!\n\n"
 packages & > /dev/null
-pprint "Packages Installed Successfully!, Installing Nodejs and Npm!\n\n"
+pprint "Paket Berhasil Diinstal!, Menginstal Nodejs dan Npm!\n\n"
 node & > nodelog.txt
-pprint "Nodejs Installed Successfully!, Now Installing Pypi Packages!\n\n"
+pprint "Nodejs Berhasil Diinstal!, Sekarang Menginstal Paket Pypi!\n\n"
 installation > pypilog.txt
-pprint "\n\n\n\n\n\n\n\nMusikku Bot Installation Completed!"
+pprint "\n\n\n\n\n\n\n\nMusikku Bot Instalasi selesai!"
 sleep 5
 clear
-pprint "If you saw any errors on the last page, Please try re executing the script!"
+pprint "Jika Anda melihat kesalahan pada halaman terakhir, Silakan coba jalankan kembali skrip!"
 sleep 5
-pprint "\nEnter Your Values Below\n\n\n"
+pprint "\nMasukkan Nilai Anda Di Bawah\n\n\n"
 pprint "API ID:  "
 read api_id
 sleep 1
@@ -67,7 +67,7 @@ pprint "\nMUSIC BOT NAME: "
 read mbt
 pprint "\nOwner Id :"
 read ownid
-pprint "$cgreen \n\nProcessing your vars, Wait a while!"
+pprint "$cgreen \n\nMemproses vars Anda, Tunggu sebentar!"
 sleep 5
 if [-f.env];
 then
@@ -85,6 +85,6 @@ STRING_SESSION = $string_session
 OWNER_ID = $ownid ""
 " > .env
 clear
-pprint "\n\n\nYour Vars have been saved Successfully!, Thanks for using Yukki Installer, now you can proceed by starting the bot with bash start!"
-pprint "\n\n\nWant more vars?"
-pprint "\nCheckout config.py and readme.md inside config folder for addtional vars. You can change all images , Thumbs, mode and everything from vars. Have a look towards them\n\n"
+pprint "\n\n\nVars Anda telah berhasil disimpan!, Terima kasih telah menggunakan Musikku Installer, sekarang Anda dapat melanjutkan dengan memulai bot dengan bash start!"
+pprint "\n\n\nIngin lebih banyak vars?"
+pprint "\nCheckout config.py dan readme.md di dalam folder config untuk vars tambahan. Anda dapat mengubah semua gambar , Thumbs, mode dan semuanya dari vars. Lihat ke arah mereka\n\n"
