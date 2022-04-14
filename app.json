@@ -69,7 +69,7 @@
         "required": true
       },
       "MUST_JOIN": {
-        "description": "Isi dengan username channel atau group tanpa @",
+        "description": "Isi dengan username channel atau group tanpa @ dan jadikan admin di gc atau ch tersebut untuk memaksa member join dulu untuk bisa menggunakan bot",
         "value": "musikkuchannel"
       },
       "UPSTREAM_REPO": {
