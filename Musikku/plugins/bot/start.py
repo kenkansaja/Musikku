@@ -28,7 +28,7 @@ from Musikku.utils.database import (add_served_chat,
 from Musikku.utils.decorators.language import language
 from Musikku.utils.inline import (help_pannel, private_panel,
                                      start_pannel)
-
+from Musikku.utils.sub import ken
 
 @app.on_message(
     filters.command(get_command("START_COMMAND"))
@@ -37,6 +37,7 @@ from Musikku.utils.inline import (help_pannel, private_panel,
     & ~BANNED_USERS
 )
 @language
+@ken
 async def start_comm(client, message: Message, _):
     await add_served_user(message.from_user.id)
     if len(message.text.split()) > 1:
