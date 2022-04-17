@@ -19,7 +19,7 @@ def ken(func):
                     chat_info = await app.get_chat(config.MUST_JOIN)
                     chat_info.invite_link
                 try:
-                    await message.reply(_["subcribe"],
+                    await app.reply_text(_["subcribe"],
                         disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
                             [[InlineKeyboardButton("••ᴊᴏɪɴ••", url=link)]]
@@ -29,7 +29,7 @@ def ken(func):
                 except ChatWriteForbidden:
                     pass
         except ChatAdminRequired:
-            await message.reply(
+            await app.reply_text(
                 f"Saya bukan admin di chat MUST_JOIN chat : {config.MUST_JOIN} !"
             )
         return await func(_, message)
