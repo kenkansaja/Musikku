@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from Musikku import app
 import config
-
+from strings import get_string
 
 def ken(func):
     async def wrapper(_, message: Message):
@@ -11,6 +11,8 @@ def ken(func):
             return
         try:
             try:
+                language = await get_lang(message.chat.id)
+                       _ = get_string(language)
                 await app.get_chat_member(config.MUST_JOIN, message.from_user.id)
             except UserNotParticipant:
                 if config.MUST_JOIN.isalpha():
