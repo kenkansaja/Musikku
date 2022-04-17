@@ -24,7 +24,7 @@ call_8 : "**Hak Admin yang Berbahaya Diberikan **\n\nHarap hapus hak **TAMBAHKAN
 call_9 : "**Gagal mengganti Aliran**\nSilakan gunakan /skip untuk mengganti trek lagi."
 call_10 : "Mengunduh Lagu Berikutnya dari Daftar Putar"
 call_11 : "Tolong tambahkan @{0} ke saluran Anda[ ID: {1}].\n\nBot tidak bisa mendapatkan detail saluran."
-subcribe : "hay {rpk} jika kamu ingin menggunakan bot ini silahkan join dulu di bawah"
+subcribe : "hay {0} jika kamu ingin menggunakan bot ini silahkan join dulu di bawah"
 
 # PLUGIN - Auth.py
 auth_1 : "Anda hanya dapat memiliki 20 Pengguna di Daftar Pengguna Resmi (AUL) grup Anda"

@@ -9,7 +9,6 @@ def ken(func):
     async def wrapper(_, message: Message):
         user_id = message.from_user.id
         user_name = message.from_user.first_name
-        rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
         if not config.MUST_JOIN:  # Not compulsory
             return
         try:
@@ -22,7 +21,7 @@ def ken(func):
                     chat_info = await app.get_chat(config.MUST_JOIN)
                     chat_info.invite_link
                 try:
-                    await message.reply(_["subcribe"],
+                    await message.reply(_["subcribe"].format(message.from_user.mention),
                         disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
                             [[InlineKeyboardButton("••ᴊᴏɪɴ••", url=link)]]
