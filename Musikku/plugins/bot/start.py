@@ -36,8 +36,8 @@ from Musikku.utils.sub import ken
     & ~filters.edited
     & ~BANNED_USERS
 )
-@language
 @ken
+@language
 async def start_comm(client, message: Message, _):
     await add_served_user(message.from_user.id)
     if len(message.text.split()) > 1:
