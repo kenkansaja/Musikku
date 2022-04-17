@@ -22,11 +22,10 @@ def ken(func):
                     chat_info = await app.get_chat(config.MUST_JOIN)
                     chat_info.invite_link
                 try:
-                    await message.reply(
-                        f"**Hay kak {rpk}, Silahkan join dulu biar bisa pake bot ini kak**",
+                    await message.reply(_["subcribe"],
                         disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
-                            [[InlineKeyboardButton("••ꜱɪʟᴀʜᴋᴀɴ ᴊᴏɪɴ••", url=link)]]
+                            [[InlineKeyboardButton("••ᴊᴏɪɴ••", url=link)]]
                         ),
                     )
                     await message.stop_propagation()
