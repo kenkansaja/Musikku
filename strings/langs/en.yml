@@ -24,7 +24,7 @@ call_8 : "**Harmful Admin Right Given **\n\nPlease remove **ADD NEW ADMINS** rig
 call_9 : "**Failed to switch Stream**\nPlease use /skip to change track again."
 call_10 : "Downloading Next Track from Playlist"
 call_11 : "Please add @{0} to your channel[ ID: {1}].\n\nBot is not able to get channel details."
-subcribe : "hey {0} if you want to use this bot please join below first"
+subcribe : "hey if you want to use this bot please join below first"
 
 # PLUGINS - Auth.py
 auth_1 : "You can only have 20 Users in your group's Authorised Users List (AUL)"
