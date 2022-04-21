@@ -79,10 +79,12 @@ GETVAR_COMMAND : ["get_var", "गेट_वर"]
 DELVAR_COMMAND : ["del_var", "देल_वर"]
 SETVAR_COMMAND : ["set_var", "सेट_वर"]
 USAGE_COMMAND : ["usage", "यूसेज"]
+VARS_COMMAND : ["vars", "config"]
 
 #Basic Bot Commands
 UPDATE_COMMAND : ["update", "अपडेट"]
 RESTART_COMMAND : ["restart", "रीस्टार्ट"]
+AUTOEND_COMMAND : ["autoend"]
 
 #Private Bot Mode
 AUTHORIZE_COMMAND : ["authorize", "ऑथॉरिजे"]
