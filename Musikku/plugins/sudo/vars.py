@@ -38,7 +38,6 @@ async def varsFunc(client, message):
     song = config.SONG_DOWNLOAD_DURATION
     play_duration = config.DURATION_LIMIT_MIN
     cm = config.CLEANMODE_DELETE_MINS
-    auto_sug = config.AUTO_SUGGESTION_TIME
     if config.AUTO_LEAVING_ASSISTANT == str(True):
         ass = "Yes"
     else:
@@ -47,10 +46,6 @@ async def varsFunc(client, message):
         pvt = "Yes"
     else:
         pvt = "No"
-    if config.AUTO_SUGGESTION_MODE == str(True):
-        a_sug = "Yes"
-    else:
-        a_sug = "No"
     if config.AUTO_DOWNLOADS_CLEAR == str(True):
         down = "Yes"
     else:
@@ -85,10 +80,8 @@ async def varsFunc(client, message):
         sotify = "Yes"
     owners = [str(ids) for ids in config.OWNER_ID]
     owner_id = " ,".join(owners)
-    tg_aud = convert_bytes(config.TG_AUDIO_FILESIZE_LIMIT)
-    tg_vid = convert_bytes(config.TG_VIDEO_FILESIZE_LIMIT)
     text = f"""**MUSIC BOT CONFIG:**
-
+    
 **<u>Basic Vars:</u>**
 `MUSIC_BOT_NAME` : **{bot_name}**
 `DURATION_LIMIT` : **{play_duration} min**
@@ -101,12 +94,9 @@ async def varsFunc(client, message):
 `GITHUB_REPO` :** {git}**
 `GIT_TOKEN `:** {token}**
 
-
 **<u>Bot Vars:</u>**
 `AUTO_LEAVING_ASSISTANT` : **{ass}**
 `ASSISTANT_LEAVE_TIME` : **{auto_leave} seconds**
-`AUTO_SUGGESTION_MODE` :** {a_sug}**
-`AUTO_SUGGESTION_TIME` : **{auto_sug} seconds**
 `AUTO_DOWNLOADS_CLEAR` : **{down}**
 `PRIVATE_BOT_MODE` : **{pvt}**
 `YOUTUBE_EDIT_SLEEP` : **{yt_sleep} seconds**
@@ -119,10 +109,6 @@ async def varsFunc(client, message):
 **<u>Spotify Vars:</u>**
 `SPOTIFY_CLIENT_ID` :** {sotify}**
 `SPOTIFY_CLIENT_SECRET` : **{sotify}**
-
-**<u>Playsize Vars:</u>**
-`TG_AUDIO_FILESIZE_LIMIT` :** {tg_aud}**
-`TG_VIDEO_FILESIZE_LIMIT` :** {tg_vid}**
 
 **<u>URL Vars:</u>**
 `SUPPORT_CHANNEL` : **{s_c}**
