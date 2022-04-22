@@ -357,6 +357,17 @@ async def is_video_allowed(chat_idd) -> str:
             return False
     return True
 
+async def get_video_limit() -> str:
+    chat_id = 123456
+    if not vlimit:
+        dblimit = await videodb.find_one({"chat_id": chat_id})
+        if not dblimit:
+            limit = config.VIDEO_STREAM_LIMIT
+        else:
+            limit = dblimit["limit"]
+    else:
+        limit = vlimit[0]
+    return limit
 
 async def set_video_limit(limt: int):
     chat_id = 123456
