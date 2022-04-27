@@ -7,8 +7,8 @@
 
 ## DEPLOY DI HEROKU
 
-<p align="center"><a href="https://ice-iota.vercel.app/"><img src="https://img.shields.io/badge/BUAT DI-HEROKU-blue?style=plastic&logo=heroku&logoColor=yellow"width="300"heigh="100" /></a></p>
-<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=a2Vua2Fuc2FqYS9NdXNpa2t1IE11c2lra3U"><img src="https://img.shields.io/badge/BUAT DIBOT-HEROKU-blue?style=plastic&logo=heroku&logoColor=yellow"width="300"heigh="100" /></a></p>
+<p align="center"><a href="https://ice-iota.vercel.app/"><img src="https://telegra.ph/file/6630257821911f10089b5.jpg" /></a></p>
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=a2Vua2Fuc2FqYS9NdXNpa2t1IE11c2lra3U"><img src="https://telegra.ph/file/70966bb4b212649afc8dc.jpg" /></a></p>
 
 
 
