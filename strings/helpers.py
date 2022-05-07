@@ -81,13 +81,13 @@ HELP_4 = """✅<u>**Perintah Ekstra:**</u>
 
 2️⃣ Anda dapat mengatur **Kualitas Video** yang ingin Anda streaming di obrolan suara.
 
-3️⃣ **Pengguna Auth**:- Anda dapat mengubah mode perintah admin dari sini ke semua orang atau hanya admin. Jika semua orang, siapa pun yang ada di grup Anda dapat menggunakan perintah admin (seperti /skip, /stop dll)
+3️⃣ **Pengguna Auth**: Anda dapat mengubah mode perintah admin dari sini ke semua orang atau hanya admin. Jika semua orang, siapa pun yang ada di grup Anda dapat menggunakan perintah admin (seperti /skip, /stop dll)
 
-4️⃣ **Mode Bersih:** Saat diaktifkan, hapus pesan bot setelah 5 menit dari grup Anda untuk memastikan obrolan Anda tetap bersih dan baik.
+4️⃣ **Mode Bersih **: Saat diaktifkan, hapus pesan bot setelah 5 menit dari grup Anda untuk memastikan obrolan Anda tetap bersih dan baik.
 
 5️⃣ **Command Clean** : Saat diaktifkan, Bot akan segera menghapus perintah yang dijalankannya (/play, /pause, /shuffle, /stop dll).
 
-6️⃣ **Pengaturan Putar:**
+6️⃣ **Pengaturan Putar**:
 
 /playmode - Dapatkan panel pengaturan pemutaran lengkap dengan tombol di mana Anda dapat mengatur pengaturan pemutaran grup Anda.
 
@@ -115,8 +115,8 @@ HELP_5 = """🔰**<u>TAMBAH & HAPUS PENGGUNA SUDO :</u>**
 /restart - Mulai ulang Bot.
 /update - Perbarui Bot.
 /speedtest - Periksa kecepatan server
-/maintenance [aktifkan / nonaktifkan]
-/logger [aktifkan / nonaktifkan] - Bot mencatat kueri yang dicari di grup logger.
+/maintenance - [enable / disable]
+/logger [enable / disable] - Bot mencatat kueri yang dicari di grup logger.
 /get_log [Jumlah Baris] - Dapatkan log bot Anda dari heroku atau vps. Bekerja untuk keduanya.
 
 **<u>PERINTAH STATUS:</u>**
