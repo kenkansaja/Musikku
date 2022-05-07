@@ -367,7 +367,7 @@ log_2 : "Logging Diaktifkan"
 log_3 : "Logging Dinonaktifkan"
 
 #mode video
-vidmode_1 : "**Penggunaan:**\n/videomode [unduh|m3u8]"
+vidmode_1 : "**Penggunaan:**\n/videomode [download|m3u8]"
 vidmode_2 : "Mode Putar Video disetel sebagai downloder. Bot akan mengunduh trek sekarang."
 vidmode_3 : "Mode Putar Video ditetapkan sebagai m3u8. Bot akan memutar trek secara langsung sekarang."
 
@@ -402,8 +402,8 @@ heroku_14 : "Kesalahan Perintah Git"
 heroku_15 : "Repositori Git Tidak Valid"
 
 #Mode bot pribadi
-pbot_1 : "**Penggunaan:**\n/otorisasi [CHAT_ID]"
-pbot_2 : "**Penggunaan:**\n/batalkan otorisasi [CHAT_ID]"
+pbot_1 : "**Penggunaan:**\n/authorize  [CHAT_ID]"
+pbot_2 : "**Penggunaan:**\n/unauthorize [CHAT_ID]"
 pbot_3 : "Menambahkan obrolan yang diberikan ke daftar resmi"
 pbot_4 : "Menghapus obrolan yang diberikan dari daftar resmi"
 pbot_5 : "Obrolan sudah ada di daftar yang diotorisasi"
@@ -413,7 +413,7 @@ pbot_8 : "Mohon tunggu.... Mengambil Obrolan Resmi."
 pbot_9 : "**<b>Obrolan yang Diambil:</b>**\n\n"
 pbot_10 : "Obrolan Pribadi"
 pbot_11 : "Tidak ditemukan Obrolan Resmi"
-pbot_12 : "Mode Bot Pribadi dinonaktifkan.\n\nUntuk menggunakan bot Anda sebagai bot pribadi, pastikan untuk menyetel **PRIVATE_BOT_MODE** = **Benar**"
+pbot_12 : "Mode Bot Pribadi dinonaktifkan.\n\nUntuk menggunakan bot Anda sebagai bot pribadi, pastikan untuk menyetel **PRIVATE_BOT_MODE** = **True**"
 pbot_13 : "\n**<b>Obrolan Tidak Diambil:</b>**\n\n"
 
 
