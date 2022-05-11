@@ -3,35 +3,30 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from Musikku import app
 import config
-JOIN_GROUP = "musikkugroup"
+
 
 def ken(func):
     async def wrapper(_, message: Message):
         user_id = message.from_user.id
         user_name = message.from_user.first_name
         rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
-        if not config.MUST_JOIN and not JOIN_GROUP:  # Not compulsory
+        if not config.MUST_JOIN:  # Not compulsory
             return
         try:
             try:
                 await app.get_chat_member(config.MUST_JOIN, message.from_user.id)
-                await app.get_chat_member(JOIN_GROUP, message.from_user.id)
             except UserNotParticipant:
                 if config.MUST_JOIN.isalpha():
                     link = "https://t.me/" + config.MUST_JOIN
-                if JOIN_GROUP.isalpha():
-                    link1 = "https://t.me/" + JOIN_GROUP
                 else:
                     chat_info = await app.get_chat(config.MUST_JOIN)
                     chat_info.invite_link
-                    chat_info1 = await app.get_chat(JOIN_GROUP)
-                    chat_info1.invite_link
                 try:
                     await message.reply(
                         f"**Hay kak {rpk}, Silahkan join dulu biar bisa pake bot ini kak**",
                         disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
-                            [[InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=link), InlineKeyboardButton("ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=link1)]]
+                            [[InlineKeyboardButton("••ꜱɪʟᴀʜᴋᴀɴ ᴊᴏɪɴ••", url=link)]]
                         ),
                     )
                     await message.stop_propagation()
