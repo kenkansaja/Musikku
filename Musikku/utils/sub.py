@@ -31,7 +31,7 @@ def ken(func):
                         f"**Hay kak {rpk}, Silahkan join dulu biar bisa pake bot ini kak**",
                         disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
-                            [[InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=link)], InlineKeyboardButton("ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=link1)]
+                            [[InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=link), InlineKeyboardButton("ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=link1)]]
                         ),
                     )
                     await message.stop_propagation()
