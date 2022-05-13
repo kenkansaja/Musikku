@@ -33,7 +33,7 @@ async def init():
         and not config.STRING5
     ):
         LOGGER("Musikku").error(
-            "No Assistant Clients Vars Defined!.. Exiting Process."
+            "Tidak Ada Asisten Klien yang Ditentukan Vars!.. Proses Keluar."
         )
         return
     if (
@@ -41,7 +41,7 @@ async def init():
         and not config.SPOTIFY_CLIENT_SECRET
     ):
         LOGGER("MusikkuMusic").warning(
-            "No Spotify Vars defined. Your bot won't be able to play spotify queries."
+            "Tidak ada Spotify Vars yang ditentukan. Bot Anda tidak akan dapat memainkan kueri spotify."
         )
     try:
         users = await get_gbanned()
@@ -56,7 +56,7 @@ async def init():
     for all_module in ALL_MODULES:
         importlib.import_module("Musikku.plugins" + all_module)
     LOGGER("Musikku.plugins").info(
-        "Successfully Imported Modules "
+        "Modul Berhasil Diimpor"
     )
     await userbot.start()
     await Musikku.start()
@@ -66,16 +66,16 @@ async def init():
         )
     except NoActiveGroupCall:
         LOGGER("Musikku").error(
-            "[ERROR] - \n\nPlease turn on your Logger Group's Voice Call. Make sure you never close/end voice call in your log group"
+            "[ERROR] - \n\nHarap aktifkan Panggilan Suara Grup Logger Anda. Pastikan Anda tidak pernah menutup/mengakhiri panggilan suara di grup log Anda"
         )
         sys.exit()
     except:
         pass
     await Musikku.decorators()
-    LOGGER("Musikku").info("Musikku Music Bot Started Successfully")
+    LOGGER("Musikku").info("Musikku Music Bot Berhasil Dimulai")
     await idle()
 
 
 if __name__ == "__main__":
     loop.run_until_complete(init())
-    LOGGER("Musikku").info("Stopping Musikku Music Bot! GoodBye")
+    LOGGER("Musikku").info("Menghentikan Bot Musikku! Selamat tinggal")
