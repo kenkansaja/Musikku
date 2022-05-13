@@ -11,6 +11,9 @@
 <p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=a2Vua2Fuc2FqYS9NdXNpa2t1IE11c2lra3U"><img src="https://telegra.ph/file/70966bb4b212649afc8dc.jpg" /></a></p>
 
 
+## DEPLOY OKTETO
+
+<a href="https://cloud.okteto.com/deploy?repository=https://github.com/kenkansaja/Musikku"><img src="https://img.shields.io/badge/Deploy%20To%20Okteto-informational?style=for-the-badge&logo=Okteto" width="200"/></a>
 
 ## STRINGS SESSION PYROGRAM
 
