@@ -1,4 +1,4 @@
-icon: https://img.shields.io/github/v/release/kenkansaja/Musikku?color=blue&logo=github&logoColor=black&style=social
+icon: https://img.shields.io/github/v/release/kenkansaja/Musikku?color=black&logo=github&logoColor=black&style=social
 deploy:
     - okteto stack deploy --build -f docker-compose.yml
 # vars: [{"name": "BRANCH", "value": "Musikku"}]
