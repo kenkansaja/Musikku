@@ -1,6 +1,6 @@
 version: "3"
 services:
-  Musikku:
+  musikku:
     build: .
     environment:
       API_ID: $API_ID
