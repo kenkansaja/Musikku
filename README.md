@@ -46,6 +46,7 @@ Nih kak cara deploy di vps
 - `git clone https://github.com/kenkansaja/Musikku`
 - `cd Musikku`
 - `bash setup`
+- `screen -S Musikku`
 - `bash start`
 
 ## ORIGINAL REPO
