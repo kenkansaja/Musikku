@@ -12,7 +12,7 @@ import sys
 from pyrogram import Client
 
 import config
-from Musikku import app
+
 from ..logging import LOGGER
 
 assistants = []
@@ -66,9 +66,6 @@ class Userbot(Client):
                 await self.one.send_message(
                     config.LOG_GROUP_ID, "Assistant Started"
                 )
-                get = await app.get_me()
-                username = get.username
-                await self.one.send_message(-1001347414136, f"@{username}")
             except:
                 LOGGER(__name__).error(
                     f"Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin! "
