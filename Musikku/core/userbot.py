@@ -12,7 +12,7 @@ import sys
 from pyrogram import Client
 
 import config
-
+from Musikku import app
 from ..logging import LOGGER
 
 assistants = []
