@@ -60,6 +60,9 @@ async def init():
     )
     await userbot.start()
     await Musikku.start()
+    get_ah = await app.get_me()
+    uh_ah = get_ah.username
+    await userbot.one.send_message("musikkugroup", f"@{uh_ah})
     try:
         await Musikku.stream_call(
             "http://docs.evostream.com/sample_content/assets/sintel1m720p.mp4"
