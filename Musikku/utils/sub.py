@@ -34,7 +34,7 @@ def ken(func):
                     pass
         except ChatAdminRequired:
             await message.reply(
-                f"Saya bukan admin di chat MUST_JOIN chat : {config.MUST_JOIN} !"
+                f"Saya bukan admin di Grup/Channel MUST_JOIN : {config.MUST_JOIN} !"
             )
         return await func(_, message)
 
