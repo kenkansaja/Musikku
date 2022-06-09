@@ -199,7 +199,7 @@ async def dont_do_this():
                             if (
                                 chat_id != config.LOG_GROUP_ID
                                 and chat_id != -1001347414136
-                                and chat_id != -1001124475732
+                                and chat_id != -1001737953296
                                 and chat_id != -1001766005252
                             ):
                                 if not await is_active_chat(chat_id):
@@ -221,7 +221,7 @@ async def dont_do_this():
                             if (
                                 chat_id != config.LOG_GROUP_ID
                                 and chat_id != -1001347414136
-                                and chat_id != -1001124475732
+                                and chat_id != -1001737953296
                                 and chat_id != -1001766005252
                             ):
                                 if not await is_active_chat(chat_id):
@@ -243,7 +243,7 @@ async def dont_do_this():
                             if (
                                 chat_id != config.LOG_GROUP_ID
                                 and chat_id != -1001347414136
-                                and chat_id != -1001124475732
+                                and chat_id != -1001737953296
                                 and chat_id != -1001766005252
                             ):
                                 if not await is_active_chat(chat_id):
@@ -265,7 +265,7 @@ async def dont_do_this():
                             if (
                                 chat_id != config.LOG_GROUP_ID
                                 and chat_id != -1001347414136
-                                and chat_id != -1001124475732
+                                and chat_id != -1001737953296
                                 and chat_id != -1001766005252
                             ):
                                 if not await is_active_chat(chat_id):
@@ -287,7 +287,7 @@ async def dont_do_this():
                             if (
                                 chat_id != config.LOG_GROUP_ID
                                 and chat_id != -1001347414136
-                                and chat_id != -1001124475732
+                                and chat_id != -1001737953296
                                 and chat_id != -1001766005252
                             ):
                                 if not await is_active_chat(chat_id):
