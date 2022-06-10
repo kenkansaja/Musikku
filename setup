@@ -113,7 +113,7 @@ pprint "\nAPI HASH: "; color_reset; read api_hash
 pprint "\nBOT TOKEN: "; color_reset; read bot_token
 pprint "\nMONGO DB URI: "; color_reset; read mongo_db
 pprint "\nLOG GROUP ID: "; color_reset; read logger
-pprint "\nMUST JOIN: " color_reset; read join
+pprint "\nMUST JOIN: "; color_reset; read join
 pprint "\nPYROGRAM STRING SESSION OF ASSISTANT ACCOUNT: "; color_reset; read string_session
 pprint "\nMUSIC BOT NAME: "; color_reset; read mbt
 pprint "\nOwner Id:"; color_reset; read ownid
