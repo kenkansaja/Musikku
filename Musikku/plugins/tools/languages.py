@@ -22,32 +22,21 @@ from Musikku.utils.decorators import (ActualAdminCB, language,
 
 
 def lanuages_keyboard(_):
-    keyboard = InlineKeyboard(row_width=2)
-    keyboard.row(
-        InlineKeyboardButton(
-            text="🏴󠁧󠁢󠁥󠁮󠁧󠁿 English", callback_data=f"languages:en",
-        ),
-        InlineKeyboardButton(
-            text="🇮🇳 हिन्दी", callback_data=f"languages:hi",
-        ),
-    )
-    keyboard.row(
-        InlineKeyboardButton(
-            text="🇱🇰 සිංහල", callback_data=f"languages:si",
-        ),
-        InlineKeyboardButton(
-            text="🇮🇩 Indonesia", callback_data=f"languages:id",
-        ),
-    )
-    keyboard.row(
-        InlineKeyboardButton(
-            text=_["BACK_BUTTON"], callback_data=f"settingsback_helper",
-        ),
-        InlineKeyboardButton(
-            text=_["CLOSE_BUTTON"], callback_data=f"close"
-        ),
-    )
-    return keyboard
+        keyboard = InlineKeyboard(row_width=2)
+        keyboard.row(
+            InlineKeyboardButton(text="🏴󠁧󠁢󠁥󠁮󠁧󠁿 English", callback_data=f"languages:en"),
+            InlineKeyboardButton(text="🇮🇩 Indonesia", callback_data=f"languages:id"),
+        )
+        keyboard.row(
+            InlineKeyboardButton(text="🇮🇩 Jawa", callback_data=f"languages:jawa"),
+            InlineKeyboardButton(text="🇮🇩 Sunda", callback_data=f"languages:sunda"),
+        )
+        keyboard.row(
+            InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data=f"settingsback_helper"),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close"),
+        )
+        return keyboard
+    
 
 
 LANGUAGE_COMMAND = get_command("LANGUAGE_COMMAND")
