@@ -126,7 +126,7 @@ HELP_5 = """🔰**<u>TAMBAH & HAPUS PENGGUNA SUDO :</u>**
 
 ️**<u>FUNGSI BLACKLIST CHAT:</u>**
 /blacklistchat [CHAT_ID] - Daftar hitam obrolan apa pun dari menggunakan Bot Musik
-/whitelist [CHAT_ID] - Daftar putih obrolan apa pun yang masuk daftar hitam dari menggunakan Bot Musik
+/whitelistchat [CHAT_ID] - Daftar putih obrolan apa pun yang masuk daftar hitam dari menggunakan Bot Musik
 /blacklistedchat - Periksa semua obrolan yang masuk daftar hitam.
 
 **<u>FUNGSI TERBLOKIR:</u>**

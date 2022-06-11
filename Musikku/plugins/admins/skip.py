@@ -123,7 +123,7 @@ async def skip(cli, message: Message, _, chat_id):
             await Musikku.skip_stream(chat_id, link, video=status)
         except Exception:
             return await message.reply_text(_["call_9"])
-        button = telegram_markup(_)
+        button = telegram_markup(_, chat_id)
         img = await gen_thumb(videoid)
         await message.reply_photo(
             photo=img,
@@ -150,7 +150,7 @@ async def skip(cli, message: Message, _, chat_id):
             await Musikku.skip_stream(chat_id, file_path, video=status)
         except Exception:
             return await mystic.edit_text(_["call_9"])
-        button = stream_markup(_, videoid)
+        button = stream_markup(_, videoid, chat_id)
         img = await gen_thumb(videoid)
         await message.reply_photo(
             photo=img,
@@ -166,7 +166,7 @@ async def skip(cli, message: Message, _, chat_id):
             await Musikku.skip_stream(chat_id, videoid, video=True)
         except Exception:
             return await message.reply_text(_["call_9"])
-        button = telegram_markup(_)
+        button = telegram_markup(_, chat_id)
         await message.reply_photo(
             photo=config.STREAM_IMG_URL,
             caption=_["stream_2"].format(user),
@@ -178,7 +178,7 @@ async def skip(cli, message: Message, _, chat_id):
         except Exception:
             return await message.reply_text(_["call_9"])
         if videoid == "telegram":
-            button = telegram_markup(_)
+            button = telegram_markup(_, chat_id)
             await message.reply_photo(
                 photo=config.TELEGRAM_AUDIO_URL
                 if str(streamtype) == "audio"
@@ -189,7 +189,7 @@ async def skip(cli, message: Message, _, chat_id):
                 reply_markup=InlineKeyboardMarkup(button),
             )
         elif videoid == "soundcloud":
-            button = telegram_markup(_)
+            button = telegram_markup(_, chat_id)
             await message.reply_photo(
                 photo=config.SOUNCLOUD_IMG_URL
                 if str(streamtype) == "audio"
@@ -200,7 +200,7 @@ async def skip(cli, message: Message, _, chat_id):
                 reply_markup=InlineKeyboardMarkup(button),
             )
         else:
-            button = stream_markup(_, videoid)
+            button = stream_markup(_, videoid, chat_id)
             img = await gen_thumb(videoid)
             await message.reply_photo(
                 photo=img,

@@ -41,10 +41,15 @@ async def stream(
     video: Union[bool, str] = None,
     streamtype: Union[bool, str] = None,
     spotify: Union[bool, str] = None,
+    forceplay: Union[bool, str] = None,
 ):
+    if not result:
+        return
     if video:
         if not await is_video_allowed(chat_id):
-            raise AssistantErr(_["play_6"])
+            raise AssistantErr(_["play_7"])
+    if forceplay:
+        await Musikku.force_stop_stream(chat_id)
     if streamtype == "playlist":
         msg = f"{_['playlist_16']}\n\n"
         count = 0
@@ -84,7 +89,8 @@ async def stream(
                 msg += f"{count}- {title[:70]}\n"
                 msg += f"{_['playlist_17']} {position}\n\n"
             else:
-                db[chat_id] = []
+                if not forceplay:
+                    db[chat_id] = []
                 status = True if video else None
                 try:
                     file_path, direct = await YouTube.download(
@@ -95,8 +101,6 @@ async def stream(
                 await Musikku.join_call(
                     chat_id, original_chat_id, file_path, video=status
                 )
-                await add_active_chat(chat_id)
-                await music_on(chat_id)
                 await put_queue(
                     chat_id,
                     original_chat_id,
@@ -107,12 +111,11 @@ async def stream(
                     vidid,
                     user_id,
                     "video" if video else "audio",
+                    forceplay=forceplay,
                 )
-                if video:
-                    await add_active_video_chat(chat_id)
                 img = await gen_thumb(vidid)
-                button = stream_markup(_, vidid)
-                await app.send_photo(
+                button = stream_markup(_, vidid, chat_id)
+                run = await app.send_photo(
                     original_chat_id,
                     photo=img,
                     caption=_["stream_1"].format(
@@ -121,6 +124,8 @@ async def stream(
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
+                db[chat_id][0]["mystic"] = run
+                db[chat_id][0]["markup"] = "stream"
         if count == 0:
             return
         else:
@@ -172,11 +177,11 @@ async def stream(
                 ),
             )
         else:
-            db[chat_id] = []
+            if not forceplay:
+                db[chat_id] = []
             await Musikku.join_call(
                 chat_id, original_chat_id, file_path, video=status
             )
-            await add_active_chat(chat_id)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -187,13 +192,11 @@ async def stream(
                 vidid,
                 user_id,
                 "video" if video else "audio",
+                forceplay=forceplay,
             )
-            if video:
-                await add_active_video_chat(chat_id)
-            await music_on(chat_id)
             img = await gen_thumb(vidid)
-            button = stream_markup(_, vidid)
-            await app.send_photo(
+            button = stream_markup(_, vidid, chat_id)
+            run = await app.send_photo(
                 original_chat_id,
                 photo=img,
                 caption=_["stream_1"].format(
@@ -202,6 +205,8 @@ async def stream(
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            db[chat_id][0]["mystic"] = run
+            db[chat_id][0]["markup"] = "stream"
     elif streamtype == "soundcloud":
         file_path = result["filepath"]
         title = result["title"]
@@ -226,7 +231,8 @@ async def stream(
                 ),
             )
         else:
-            db[chat_id] = []
+            if not forceplay:
+                db[chat_id] = []
             await Musikku.join_call(
                 chat_id, original_chat_id, file_path, video=None
             )
@@ -240,13 +246,10 @@ async def stream(
                 streamtype,
                 user_id,
                 "audio",
+                forceplay=forceplay,
             )
-            if video:
-                await add_active_video_chat(chat_id)
-            await music_on(chat_id)
-            await add_active_chat(chat_id)
-            button = telegram_markup(_)
-            await app.send_photo(
+            button = telegram_markup(_, chat_id)
+            run = await app.send_photo(
                 original_chat_id,
                 photo=config.SOUNCLOUD_IMG_URL,
                 caption=_["stream_3"].format(
@@ -254,6 +257,8 @@ async def stream(
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            db[chat_id][0]["mystic"] = run
+            db[chat_id][0]["markup"] = "tg"
     elif streamtype == "telegram":
         file_path = result["path"]
         link = result["link"]
@@ -280,11 +285,11 @@ async def stream(
                 ),
             )
         else:
-            db[chat_id] = []
+            if not forceplay:
+                db[chat_id] = []
             await Musikku.join_call(
                 chat_id, original_chat_id, file_path, video=status
             )
-            await add_active_chat(chat_id)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -295,12 +300,12 @@ async def stream(
                 streamtype,
                 user_id,
                 "video" if video else "audio",
+                forceplay=forceplay,
             )
             if video:
                 await add_active_video_chat(chat_id)
-            await music_on(chat_id)
-            button = telegram_markup(_)
-            await app.send_photo(
+            button = telegram_markup(_, chat_id)
+            run = await app.send_photo(
                 original_chat_id,
                 photo=config.TELEGRAM_VIDEO_URL
                 if video
@@ -310,6 +315,8 @@ async def stream(
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            db[chat_id][0]["mystic"] = run
+            db[chat_id][0]["markup"] = "tg"
     elif streamtype == "live":
         link = result["link"]
         vidid = result["vidid"]
@@ -336,14 +343,14 @@ async def stream(
                 ),
             )
         else:
-            db[chat_id] = []
+            if not forceplay:
+                db[chat_id] = []
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
             await Musikku.join_call(
                 chat_id, original_chat_id, file_path, video=status
             )
-            await add_active_chat(chat_id)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -354,13 +361,11 @@ async def stream(
                 vidid,
                 user_id,
                 "video" if video else "audio",
+                forceplay=forceplay,
             )
-            if video:
-                await add_active_video_chat(chat_id)
-            await music_on(chat_id)
             img = await gen_thumb(vidid)
-            button = telegram_markup(_)
-            await app.send_photo(
+            button = telegram_markup(_, chat_id)
+            run = await app.send_photo(
                 original_chat_id,
                 photo=img,
                 caption=_["stream_1"].format(
@@ -369,6 +374,8 @@ async def stream(
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            db[chat_id][0]["mystic"] = run
+            db[chat_id][0]["markup"] = "tg"
     elif streamtype == "index":
         link = result
         title = "Index or M3u8 Link"
@@ -382,7 +389,7 @@ async def stream(
                 duration_min,
                 user_name,
                 link,
-                "video",
+                "video" if video else "audio",
             )
             position = len(db.get(chat_id)) - 1
             await mystic.edit_text(
@@ -391,11 +398,14 @@ async def stream(
                 )
             )
         else:
-            db[chat_id] = []
+            if not forceplay:
+                db[chat_id] = []
             await Musikku.join_call(
-                chat_id, original_chat_id, link, video=True
+                chat_id,
+                original_chat_id,
+                link,
+                video=True if video else None,
             )
-            await add_active_chat(chat_id)
             await put_queue_index(
                 chat_id,
                 original_chat_id,
@@ -404,15 +414,16 @@ async def stream(
                 duration_min,
                 user_name,
                 link,
-                "video",
+                "video" if video else "audio",
+                forceplay=forceplay,
             )
-            await add_active_video_chat(chat_id)
-            await music_on(chat_id)
-            button = telegram_markup(_)
-            await app.send_photo(
+            button = telegram_markup(_, chat_id)
+            run = await app.send_photo(
                 original_chat_id,
                 photo=config.STREAM_IMG_URL,
                 caption=_["stream_2"].format(user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            db[chat_id][0]["mystic"] = run
+            db[chat_id][0]["markup"] = "tg"
             await mystic.delete()
