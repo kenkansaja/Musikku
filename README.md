@@ -58,6 +58,8 @@ Nih kak cara deploy di vps
 Terimakasih
 - [@NotReallyShikhar](https://github.com/NotReallyShikhar) - Dev
 - [@kenkansaja](https://github.com/kenkansaja) - Kanger
+- [@Toni880](https://github.com/Toni880) - Lord Ujian
+
 
 ### Mari terhubung!
 <p>
