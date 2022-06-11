@@ -16,16 +16,16 @@ channeldb = mongodb.cplaymode
 commanddb = mongodb.commands
 cleandb = mongodb.cleanmode
 playmodedb = mongodb.playmode
-chatmodedb = mongodb.chatmode
 playtypedb = mongodb.playtypedb
-loopdb = mongodb.loop
 langdb = mongodb.language
 authdb = mongodb.adminauth
 videodb = mongodb.Musikkuvideocalls
+onoffdb = mongodb.onoffper
+suggdb = mongodb.suggestion
 autoenddb = mongodb.autoend
 
+
 # Shifting to memory [ mongo sucks often]
-chatmode = {}
 loop = {}
 playtype = {}
 playmode = {}
@@ -41,9 +41,14 @@ command = []
 cleanmode = []
 nonadmin = {}
 vlimit = []
+maintenance = []
+suggestion = {}
 autoend = {}
 
-# Auto End
+
+# Auto End Stream
+
+
 async def is_autoend() -> bool:
     chat_id = 123
     mode = autoend.get(chat_id)
@@ -56,6 +61,7 @@ async def is_autoend() -> bool:
         return True
     return mode
 
+
 async def autoend_on():
     chat_id = 123
     autoend[chat_id] = True
@@ -63,12 +69,43 @@ async def autoend_on():
     if not user:
         return await autoenddb.insert_one({"chat_id": chat_id})
 
+
 async def autoend_off():
     chat_id = 123
     autoend[chat_id] = False
     user = await autoenddb.find_one({"chat_id": chat_id})
     if user:
         return await autoenddb.delete_one({"chat_id": chat_id})
+
+
+# SUGGESTION
+
+
+async def is_suggestion(chat_id: int) -> bool:
+    mode = suggestion.get(chat_id)
+    if not mode:
+        user = await suggdb.find_one({"chat_id": chat_id})
+        if not user:
+            suggestion[chat_id] = True
+            return True
+        suggestion[chat_id] = False
+        return False
+    return mode
+
+
+async def suggestion_on(chat_id: int):
+    suggestion[chat_id] = True
+    user = await suggdb.find_one({"chat_id": chat_id})
+    if user:
+        return await suggdb.delete_one({"chat_id": chat_id})
+
+
+async def suggestion_off(chat_id: int):
+    suggestion[chat_id] = False
+    user = await suggdb.find_one({"chat_id": chat_id})
+    if not user:
+        return await suggdb.insert_one({"chat_id": chat_id})
+
 
 # LOOP PLAY
 async def get_loop(chat_id: int) -> int:
@@ -88,7 +125,7 @@ async def get_cmode(chat_id: int) -> int:
     if not mode:
         mode = await channeldb.find_one({"chat_id": chat_id})
         if not mode:
-            return False
+            return None
         channelconnect[chat_id] = mode["mode"]
         return mode["mode"]
     return mode
@@ -97,27 +134,6 @@ async def get_cmode(chat_id: int) -> int:
 async def set_cmode(chat_id: int, mode: int):
     channelconnect[chat_id] = mode
     await channeldb.update_one(
-        {"chat_id": chat_id}, {"$set": {"mode": mode}}, upsert=True
-    )
-
-
-# PLAY MODE WHETHER GROUP OR CHANNEL
-async def get_chatmode(chat_id: int) -> str:
-    mode = chatmode.get(chat_id)
-    if not mode:
-        mode = await chatmodedb.find_one({"chat_id": chat_id})
-        if not mode:
-            chatmode[chat_id] = "Group"
-            return "Group"
-        chatmode[chat_id] = mode["mode"]
-        return mode["mode"]
-    else:
-        return mode
-
-
-async def set_chatmode(chat_id: int, mode: str):
-    chatmode[chat_id] = mode
-    await chatmodedb.update_one(
         {"chat_id": chat_id}, {"$set": {"mode": mode}}, upsert=True
     )
 
@@ -148,8 +164,8 @@ async def get_playmode(chat_id: int) -> str:
     if not mode:
         mode = await playmodedb.find_one({"chat_id": chat_id})
         if not mode:
-            playmode[chat_id] = "Inline"
-            return "Inline"
+            playmode[chat_id] = "Direct"
+            return "Direct"
         playmode[chat_id] = mode["mode"]
         return mode["mode"]
     return mode
@@ -357,6 +373,7 @@ async def is_video_allowed(chat_idd) -> str:
             return False
     return True
 
+
 async def get_video_limit() -> str:
     chat_id = 123456
     if not vlimit:
@@ -369,6 +386,7 @@ async def get_video_limit() -> str:
         limit = vlimit[0]
     return limit
 
+
 async def set_video_limit(limt: int):
     chat_id = 123456
     vlimit.clear()
@@ -376,6 +394,67 @@ async def set_video_limit(limt: int):
     return await videodb.update_one(
         {"chat_id": chat_id}, {"$set": {"limit": limt}}, upsert=True
     )
+
+
+# On Off
+async def is_on_off(on_off: int) -> bool:
+    onoff = await onoffdb.find_one({"on_off": on_off})
+    if not onoff:
+        return False
+    return True
+
+
+async def add_on(on_off: int):
+    is_on = await is_on_off(on_off)
+    if is_on:
+        return
+    return await onoffdb.insert_one({"on_off": on_off})
+
+
+async def add_off(on_off: int):
+    is_off = await is_on_off(on_off)
+    if not is_off:
+        return
+    return await onoffdb.delete_one({"on_off": on_off})
+
+
+# Maintenance
+
+
+async def is_maintenance():
+    if not maintenance:
+        get = await onoffdb.find_one({"on_off": 1})
+        if not get:
+            maintenance.clear()
+            maintenance.append(2)
+            return True
+        else:
+            maintenance.clear()
+            maintenance.append(1)
+            return False
+    else:
+        if 1 in maintenance:
+            return False
+        else:
+            return True
+
+
+async def maintenance_off():
+    maintenance.clear()
+    maintenance.append(2)
+    is_off = await is_on_off(1)
+    if not is_off:
+        return
+    return await onoffdb.delete_one({"on_off": 1})
+
+
+async def maintenance_on():
+    maintenance.clear()
+    maintenance.append(1)
+    is_on = await is_on_off(1)
+    if is_on:
+        return
+    return await onoffdb.insert_one({"on_off": 1})
 
 
 # Audio Video Limit
