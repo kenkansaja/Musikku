@@ -34,6 +34,8 @@ from Musikku.utils.inline.play import (livestream_markup,
 from Musikku.utils.inline.playlist import botplaylist_markup
 from Musikku.utils.logger import play_logs
 from Musikku.utils.stream.stream import stream
+from Musikku.utils.sub import ken
+
 
 # Command
 PLAY_COMMAND = get_command("PLAY_COMMAND")
@@ -45,6 +47,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
     & ~filters.edited
     & ~BANNED_USERS
 )
+@ken
 @PlayWrapper
 async def play_commnd(
     client,
