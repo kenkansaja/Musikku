@@ -7,6 +7,7 @@
 #
 # All rights reserved.
 
+
 from typing import Union
 
 from pyrogram import filters, types
@@ -18,7 +19,8 @@ from Musikku import app
 from Musikku.misc import SUDOERS
 from Musikku.utils import help_pannel
 from Musikku.utils.database import get_lang, is_commanddelete_on
-from Musikku.utils.decorators.language import language, languageCB
+from Musikku.utils.decorators.language import (LanguageStart,
+                                                  languageCB)
 from Musikku.utils.inline.help import (help_back_markup,
                                           private_help_panel)
 
@@ -76,7 +78,7 @@ async def helper_private(
     & ~filters.edited
     & ~BANNED_USERS
 )
-@language
+@LanguageStart
 async def help_com_group(client, message: Message, _):
     keyboard = private_help_panel(_)
     await message.reply_text(

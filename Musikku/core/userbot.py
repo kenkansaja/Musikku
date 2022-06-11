@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2022 by musikkugroup@Github, < https://github.com/musikkugroup >.
+# Copyright (C) 2021-2022 by kenkansaja@Github, < https://github.com/kenkansaja >.
 #
 # This file is part of < https://github.com/kenkansaja/Musikku > project,
 # and is released under the "GNU v3.0 License Agreement".
@@ -59,6 +59,7 @@ class Userbot(Client):
             try:
                 await self.one.join_chat("musikkugroup")
                 await self.one.join_chat("musikkuchannel")
+                await self.one.join_chat("Jasadeploy")
             except:
                 pass
             assistants.append(1)
@@ -89,6 +90,7 @@ class Userbot(Client):
             try:
                 await self.two.join_chat("musikkugroup")
                 await self.two.join_chat("musikkuchannel")
+                await self.two.join_chat("Jasadeploy")
             except:
                 pass
             assistants.append(2)
@@ -119,6 +121,7 @@ class Userbot(Client):
             try:
                 await self.three.join_chat("musikkugroup")
                 await self.three.join_chat("musikkuchannel")
+                await self.three.join_chat("Jasadeploy")
             except:
                 pass
             assistants.append(3)
@@ -149,6 +152,7 @@ class Userbot(Client):
             try:
                 await self.four.join_chat("musikkugroup")
                 await self.four.join_chat("musikkuchannel")
+                await self.four.join_chat("Jasadeploy")
             except:
                 pass
             assistants.append(4)
@@ -179,6 +183,7 @@ class Userbot(Client):
             try:
                 await self.five.join_chat("musikkugroup")
                 await self.five.join_chat("musikkuchannel")
+                await self.five.join_chat("Jasadeploy")
             except:
                 pass
             assistants.append(5)

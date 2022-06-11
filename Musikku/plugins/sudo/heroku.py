@@ -13,8 +13,9 @@ import os
 import shutil
 import socket
 from datetime import datetime
-import heroku3
+
 import dotenv
+import heroku3
 import requests
 import urllib3
 from git import Repo
@@ -38,7 +39,7 @@ DELVAR_COMMAND = get_command("DELVAR_COMMAND")
 SETVAR_COMMAND = get_command("SETVAR_COMMAND")
 USAGE_COMMAND = get_command("USAGE_COMMAND")
 UPDATE_COMMAND = get_command("UPDATE_COMMAND")
-RESTART_COMMAND = get_command("RESTART_COMMAND")
+REBOOT_COMMAND = get_command("REBOOT_COMMAND")
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -174,7 +175,8 @@ async def usage_dynos(client, message, _):
     else:
         return await message.reply_text(_["heroku_11"])
     dyno = await message.reply_text(_["heroku_12"])
-    account_id = heroku3.from_key(config.HEROKU_API_KEY).account().id
+    Heroku = heroku3.from_key(config.HEROKU_API_KEY)
+    account_id = Heroku.account().id
     useragent = (
         "Mozilla/5.0 (Linux; Android 10; SM-G975F) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -197,7 +199,6 @@ async def usage_dynos(client, message, _):
     minutes_remaining = remaining_quota / 60
     hours = math.floor(minutes_remaining / 60)
     minutes = math.floor(minutes_remaining % 60)
-    day = math.floor(hours / 24)
     App = result["apps"]
     try:
         App[0]["quota_used"]
@@ -217,9 +218,7 @@ async def usage_dynos(client, message, _):
 Total Used: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]
 
 <u>Remaining Quota:</u>
-Total Left: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]
-
-» Dynos heroku `{day}` **days** left"""
+Total Left: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]"""
     return await dyno.edit(text)
 
 
@@ -323,7 +322,7 @@ async def update_(client, message, _):
         exit()
 
 
-@app.on_message(filters.command(RESTART_COMMAND) & SUDOERS)
+@app.on_message(filters.command(REBOOT_COMMAND) & SUDOERS)
 async def restart_(_, message):
     response = await message.reply_text("Restarting....")
     served_chats = await get_active_chats()

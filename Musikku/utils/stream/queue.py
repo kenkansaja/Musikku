@@ -7,7 +7,10 @@
 #
 # All rights reserved.
 
+from typing import Union
+
 from config import autoclean, chatstats, userstats
+from config.config import time_to_seconds
 from Musikku.misc import db
 
 
@@ -21,8 +24,13 @@ async def put_queue(
     vidid,
     user_id,
     stream,
+    forceplay: Union[bool, str] = None,
 ):
     title = title.title()
+    try:
+        duration_in_seconds = time_to_seconds(duration) - 3
+    except:
+        duration_in_seconds = 0
     put = {
         "title": title,
         "dur": duration,
@@ -31,8 +39,18 @@ async def put_queue(
         "chat_id": original_chat_id,
         "file": file,
         "vidid": vidid,
+        "seconds": duration_in_seconds,
+        "played": 0,
     }
-    db[chat_id].append(put)
+    if forceplay:
+        check = db.get(chat_id)
+        if check:
+            check.insert(0, put)
+        else:
+            db[chat_id] = []
+            db[chat_id].append(put)
+    else:
+        db[chat_id].append(put)
     autoclean.append(file)
     vidid = "telegram" if vidid == "soundcloud" else vidid
     to_append = {"vidid": vidid, "title": title}
@@ -54,6 +72,7 @@ async def put_queue_index(
     user,
     vidid,
     stream,
+    forceplay: Union[bool, str] = None,
 ):
     put = {
         "title": title,
@@ -63,5 +82,15 @@ async def put_queue_index(
         "chat_id": original_chat_id,
         "file": file,
         "vidid": vidid,
+        "seconds": 0,
+        "played": 0,
     }
-    db[chat_id].append(put)
+    if forceplay:
+        check = db.get(chat_id)
+        if check:
+            check.insert(0, put)
+        else:
+            db[chat_id] = []
+            db[chat_id].append(put)
+    else:
+        db[chat_id].append(put)

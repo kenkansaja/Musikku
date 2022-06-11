@@ -20,8 +20,7 @@ from config import BANNED_USERS
 from strings import get_command
 from Musikku import app
 from Musikku.misc import db
-from Musikku.utils.pastebin import Musikkubin
-from Musikku.utils import (get_channeplayCB,
+from Musikku.utils import (Musikkubin, get_channeplayCB,
                               seconds_to_min)
 from Musikku.utils.database import (get_cmode, is_active_chat,
                                        is_music_playing)

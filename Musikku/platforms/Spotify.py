@@ -7,7 +7,6 @@
 #
 # All rights reserved.
 
-
 import re
 
 import spotipy
