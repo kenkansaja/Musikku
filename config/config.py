@@ -92,9 +92,8 @@ AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", None)
 # Set it True if you want to bot to suggest about bot commands to random chats of your bots.
 AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", None)
 
-AUTO_SUGGESTION_TIME = int(
-    getenv("AUTO_SUGGESTION_TIME", "5400")
-)  # Remember to give value in Seconds
+AUTO_SUGGESTION_TIME = int(getenv("AUTO_SUGGESTION_TIME", "5400"))  
+# Remember to give value in Seconds
 
 TG_AUDIO_FILESIZE_LIMIT = int(
     getenv("TG_AUDIO_FILESIZE_LIMIT", "104857600")
