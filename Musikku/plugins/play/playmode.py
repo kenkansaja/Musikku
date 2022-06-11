@@ -13,8 +13,8 @@ from pyrogram.types import InlineKeyboardMarkup, Message
 from config import BANNED_USERS
 from strings import get_command
 from Musikku import app
-from Musikku.utils.database import (get_chatmode, get_playmode,
-                                       get_playtype)
+from Musikku.utils.database import (get_playmode, get_playtype,
+                                       is_nonadmin_chat)
 from Musikku.utils.decorators import language
 from Musikku.utils.inline.settings import playmode_users_markup
 
@@ -35,8 +35,8 @@ async def playmode_(client, message: Message, _):
         Direct = True
     else:
         Direct = None
-    chatmode = await get_chatmode(message.chat.id)
-    if chatmode == "Group":
+    is_non_admin = await is_nonadmin_chat(message.chat.id)
+    if not is_non_admin:
         Group = True
     else:
         Group = None
