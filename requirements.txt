@@ -22,4 +22,4 @@ tgcrypto
 wget
 youtube-search
 youtube-search-python
-yt-dlp
+git+https://github.com/Randi356/yt-dlp
