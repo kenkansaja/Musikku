@@ -210,15 +210,21 @@ async def usage_dynos(client, message, _):
         AppPercentage = math.floor(App[0]["quota_used"] * 100 / quota)
     AppHours = math.floor(AppQuotaUsed / 60)
     AppMinutes = math.floor(AppQuotaUsed % 60)
+    day = math.floor(hours / 24)
     await asyncio.sleep(1.5)
     text = f"""
-**DYNO USAGE**
-
-<u>Usage:</u>
-Total Used: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]
-
-<u>Remaining Quota:</u>
-Total Left: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]"""
+╭┈─╼━━━━━━━━━━━━━╾─┈
+│         ⚡{config.MUSIC_BOT_NAME}⚡  
+├┈─╼━━━━━━━━━━━━━╾─┈ 
+│✨ ᴘᴇɴɢɢᴜɴᴀᴀɴ ᴅʏɴᴏ ꜱᴀᴀᴛ ɪɴɪ
+│  ▸ {AppHours} ᴊᴀᴍ - {AppMinutes} ᴍᴇɴɪᴛ.
+│  ▸ ᴘʀᴇꜱᴇɴᴛᴀꜱᴇ : {AppPercentage}%
+├┈──────────────┈
+│✨ ᴘᴇɴɢɢᴜɴᴀᴀɴ ᴅʏɴᴏ ʙᴜʟᴀɴ ɪɴɪ
+│  ▸ {hours} ᴊᴀᴍ - {minutes} ᴍᴇɴɪᴛ.
+│  ▸ ᴘʀᴇꜱᴇɴᴛᴀꜱᴇ : {percentage}%.
+╰┈─────────────┈ 
+  ᴅʏɴᴏ ʜᴇʀᴏᴋᴜ : {day} ʜᴀʀɪ ʟᴀɢɪ​"""
     return await dyno.edit(text)
 
 
