@@ -43,12 +43,13 @@
 - /channelplay [Nama pengguna atau id obrolan] atau [Nonaktifkan] - Hubungkan saluran ke grup dan streaming musik di obrolan suara saluran dari grup Anda.
 ## DEPLOY VPS
 Nih kak cara deploy di vps
-- `git clone https://github.com/kenkansaja/Musikku`
-- `cd Musikku`
-- `bash setup`
-- `screen -S Musikku`
-- `bash start`
-
+```console
+musikku@musikku$ git clone https://github.com/kenkansaja/Musikku
+musikku@musikku$ cd Musikku
+musikku@musikku$ bash setup
+musikku@musikku$ screen -S Musikku
+musikku@musikku$ bash start
+```
 ## ORIGINAL REPO
 > Terimakasih untuk [@NotReallyShikhar](https://github.com/NotReallyShikhar) dan [Team Yukki](https://github.com/TeamYukki) Untuk sumber code nya, saya hanyalah kangger oke.
 
