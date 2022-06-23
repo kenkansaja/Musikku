@@ -151,7 +151,7 @@ STRING5 = getenv("STRING_SESSION5", None)
 ### DONT TOUCH or EDIT codes after this line
 BANNED_USERS = filters.user()
 YTDOWNLOADER = 1
-LOG = 2
+LOG = 1
 LOG_FILE_NAME = "Musikkulogs.txt"
 adminlist = {}
 lyrical = {}
