@@ -206,6 +206,7 @@ class Call(PyTgCalls):
             except ChatAdminRequired:
                 raise AssistantErr(_["call_1"])
             if get.status == "banned" or get.status == "kicked":
+                await app.unban_chat_member(chat_id, userbot.id)
                 raise AssistantErr(
                     _["call_2"].format(userbot.username, userbot.id)
                 )
@@ -213,6 +214,7 @@ class Call(PyTgCalls):
             chat = await app.get_chat(chat_id)
             if chat.username:
                 try:
+                    await app.unban_chat_member(chat_id, userbot.id)
                     await userbot.join_chat(chat.username)
                 except UserAlreadyParticipant:
                     pass
@@ -247,6 +249,7 @@ class Call(PyTgCalls):
                             "https://t.me/+", "https://t.me/joinchat/"
                         )
                     await asyncio.sleep(3)
+                    await app.unban_chat_member(chat_id, userbot.id)
                     await userbot.join_chat(invitelink)
                     await asyncio.sleep(4)
                     await m.edit(_["call_6"].format(userbot.name))
