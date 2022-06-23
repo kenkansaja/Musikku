@@ -33,9 +33,7 @@ def ken(func):
                 except ChatWriteForbidden:
                     pass
         except ChatAdminRequired:
-            await message.reply(
-                f"Saya bukan admin di chat MUST_JOIN chat : {config.MUST_JOIN} !"
-            )
+            await message.reply(f"Saya bukan admin di: {config.MUST_JOIN}!")
         return await func(_, message)
 
     return wrapper
