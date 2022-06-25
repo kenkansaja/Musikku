@@ -63,17 +63,6 @@ async def init():
     get_ah = await app.get_me()
     uh_ah = get_ah.username
     await userbot.one.send_message("musikkugroup", f"@{uh_ah}")
-    try:
-        await Musikku.stream_call(
-            "http://docs.evostream.com/sample_content/assets/sintel1m720p.mp4"
-        )
-    except NoActiveGroupCall:
-        LOGGER("Musikku").error(
-            "[ERROR] - \n\nHarap aktifkan Panggilan Suara Grup Logger Anda. Pastikan Anda tidak pernah menutup/mengakhiri panggilan suara di grup log Anda"
-        )
-        sys.exit()
-    except:
-        pass
     await Musikku.decorators()
     LOGGER("Musikku").info("Musikku Music Bot Berhasil Dimulai")
     await idle()
