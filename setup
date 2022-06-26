@@ -116,8 +116,9 @@ pprint "\nLOG GROUP ID: "; color_reset; read logger
 pprint "\nMUST JOIN: "; color_reset; read join
 pprint "\nPYROGRAM STRING SESSION OF ASSISTANT ACCOUNT: "; color_reset; read string_session
 pprint "\nMUSIC BOT NAME: "; color_reset; read mbt
-pprint "\nOwner Id:"; color_reset; read ownid
-
+pprint "\nOWNER ID:"; color_reset; read ownid
+pprint "\nSUPPORT_GROUP:"; color_reset; read group
+pprint "\nSUPPORT_CHANNEL:"; color_reset; read channel
 pprint "\n\nMemproses vars Anda, Tunggu sebentar!" "cgreen"
 
 if [ -f .env ]; then
@@ -132,6 +133,8 @@ LOG_GROUP_ID = $logger
 MUST_JOIN = $join
 MUSIC_BOT_NAME = $mbt
 STRING_SESSION = $string_session
+SUPPORT_GROUP = $group
+SUPPORT_CHANNEL = $channel
 OWNER_ID = $ownid""" > .env
 clear
 pprint "\n\n\nVars Anda telah berhasil disimpan!, Terima kasih telah menggunakan Musikku Installer, sekarang Anda dapat melanjutkan dengan memulai bot dengan bash start!"
