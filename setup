@@ -125,17 +125,17 @@ if [ -f .env ]; then
 	rm .env
 fi
 
-echo """API_ID = $api_id
-API_HASH = $api_hash
-BOT_TOKEN = $bot_token
-MONGO_DB_URI = $mongo_db
-LOG_GROUP_ID = $logger
-MUST_JOIN = $join
-MUSIC_BOT_NAME = $mbt
-STRING_SESSION = $string_session
-SUPPORT_GROUP = $group
-SUPPORT_CHANNEL = $channel
-OWNER_ID = $ownid""" > .env
+echo """API_ID=$api_id
+API_HASH=$api_hash
+BOT_TOKEN=$bot_token
+MONGO_DB_URI=$mongo_db
+LOG_GROUP_ID=$logger
+MUST_JOIN=$join
+MUSIC_BOT_NAME=$mbt
+STRING_SESSION=$string_session
+SUPPORT_GROUP=$group
+SUPPORT_CHANNEL=$channel
+OWNER_ID=$ownid""" > .env
 clear
 pprint "\n\n\nVars Anda telah berhasil disimpan!, Terima kasih telah menggunakan Musikku Installer, sekarang Anda dapat melanjutkan dengan memulai bot dengan bash start!"
 pprint "\n\n\nIngin lebih banyak vars?"
