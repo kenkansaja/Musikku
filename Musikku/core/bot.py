@@ -41,15 +41,9 @@ class MusikkuBot(Client):
             )
             sys.exit()
         a = await self.get_chat_member(config.LOG_GROUP_ID, self.id)
-        b = await self.get_chat_member(config.MUST_JOIN, self.id)
         if a.status != "administrator":
             LOGGER(__name__).error(
                 "Tolong promosikan Bot sebagai Admin di Grup Logger"
-            )
-            sys.exit()
-        if b.status != "administrator":
-            LOGGER(__name__).error(
-                f"Tolong promosikan Bot sebagai Admin di Grup @{config.MUST_JOIN}"
             )
             sys.exit()
         if get_me.last_name:
