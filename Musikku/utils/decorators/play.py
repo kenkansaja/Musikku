@@ -9,7 +9,7 @@
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, adminlist
+from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, MUST_JOIN, adminlist
 from strings import get_string
 from Musikku import YouTube, app
 from Musikku.misc import SUDOERS
@@ -20,6 +20,7 @@ from Musikku.utils.database import (get_cmode, get_lang,
                                        is_served_private_chat)
 from Musikku.utils.database.memorydatabase import is_maintenance
 from Musikku.utils.inline.playlist import botplaylist_markup
+from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 
 
 def PlayWrapper(command):
@@ -87,6 +88,19 @@ def PlayWrapper(command):
             return await message.reply_text(
                 _["general_4"], reply_markup=upl
             )
+        if MUST_JOIN:
+            try:
+                await app.get_chat_member(MUST_JOIN, message.from_user.id)
+            except UserNotParticipant:
+                sub = await app.export_chat_invite_link(MUST_JOIN)
+                kontol = InlineKeyboardMarkup(
+                    [
+                        [InlineKeyboardButton("MUST JOIN", url=sub)]
+                    ]
+                )
+                return await message.reply_text(_["force_sub"].format(message.from_user.mention), reply_markup=kontol)
+            
+
         if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
