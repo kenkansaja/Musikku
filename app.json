@@ -56,7 +56,7 @@
       "DURATION_LIMIT": {
         "description": "diisi, berapa panjang durasi maksimal lagu!",
         "required": true,
-        "value": "60"
+        "value": "160"
       },
       "HEROKU_API_KEY": {
         "description": "Isi dengan Token Api heroku.",
@@ -72,10 +72,6 @@
         "description": "ID Grup Log Anda, tambahkan bot Anda dan promosikan sebagai admin dengan hak penuh!. Gunakan hanya Grup. Tolong jangan gunakan ID Channel.",
         "value": "",
         "required": true
-      },
-      "MUST_JOIN": {
-        "description": "Isi dengan username channel atau group tanpa @ dan jadikan admin di gc atau ch tersebut untuk memaksa member join dulu untuk bisa menggunakan bot",
-        "required": false
       },
       "UPSTREAM_REPO": {
         "description": "If you dont know this, Leave as it is",
