@@ -9,6 +9,7 @@ general_3 : "Beberapa **pengecualian terjadi** saat memproses kueri Anda.\n\nJen
 general_4 : "Anda adalah admin anonim di grup obrolan ini!\nKembali kembali ke Akun Pengguna Dari Hak Admin."
 general_5 : "Anda harus menjadi admin dengan mengelola hak obrolan suara untuk melakukan tindakan ini."
 general_6 : "Bot tidak streaming di voice chat."
+force_sub : "silahkan {} bergabung dulu dengan grup atau saluran kami sebelum menggunakan bot ini"
 
 # Kelas - Telegram.py
 tg_1 : "Bot **kelebihan beban** dengan unduhan sekarang.\n\n**Coba Setelah:** {0} (__waktu yang diharapkan__)"
