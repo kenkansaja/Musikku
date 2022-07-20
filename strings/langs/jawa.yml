@@ -8,7 +8,6 @@ general_4 : "Sampeyan iku admin anonim saka grup chatting iki!\nBali menyang Aku
 general_5 : "Sampeyan kudu dadi admin sing ngatur hak istimewa obrolan swara kanggo nindakake tumindak iki."
 general_6 : "Bot ora streaming ing obrolan swara."
 force_sub : "Mangga {} gabung karo klompok dhisik sadurunge nggunakake bot iki"
-force_sub : "Punten {} gabung heula ka grup kami sateuacan nganggo bot ieu"
 
 # Kelas - Telegram.py
 tg_1 : "Bot **kakehan** karo download saiki.\n\n**Coba Sawise:** {0} (__wektu samesthine__)"
