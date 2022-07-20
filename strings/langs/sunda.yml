@@ -7,6 +7,7 @@ general_3 : "Sababaraha **kajadian pengecualian** nalika ngolah pamundut anjeun.
 general_4 : "Anjeun admin anonim tina grup obrolan ieu!\nBalik deui ka Akun Pamaké Ti Hak Admin."
 general_5 : "Anjeun kedah janten admin sareng ngatur hak istimewa obrolan sora pikeun ngalakukeun tindakan ieu."
 general_6 : "Bot teu ngalirkeun dina obrolan sora."
+force_sub : "Punten {} gabung ka grup atanapi saluran kami sateuacan nganggo bot ieu"
 
 # Classes - Telegram.py
 tg_1 : "Bot **kabeurat** ku undeuran ayeuna.\n\n**Coba Saatos:** {0} (__diperkirakeun waktu__)"
