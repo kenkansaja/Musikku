@@ -87,10 +87,10 @@ AUTO_LEAVE_ASSISTANT_TIME = int(
 MUST_JOIN = int(getenv("MUST_JOIN") or getenv("MUST_JOIN")
 
 # Set it True if you want to delete downloads after the music playout ends from your downloads folder
-AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", False)
+AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", None)
 
 # Set it True if you want to bot to suggest about bot commands to random chats of your bots.
-AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", False)
+AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", None)
 
 AUTO_SUGGESTION_TIME = int(getenv("AUTO_SUGGESTION_TIME", "5400"))  
 # Remember to give value in Seconds
