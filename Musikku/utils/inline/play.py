@@ -7,8 +7,7 @@
 #
 # All rights reserved.
 
-import random
-from config import SUPPORT_CHANNEL
+import random 
 from pyrogram.types import InlineKeyboardButton
 
 selections = [
