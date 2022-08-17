@@ -19,10 +19,6 @@ ___
 
 <p align="center"><a href="https://replit.com/@kenkannih/strings-session#main.py"><img src="https://img.shields.io/badge/REPLIT-STRINGS-yellow?style=plastic&logo=replit&logoColor=yellow"width="270" height="40" /></a></p>
 
-<p align="center">
-<a href="https://t.me/Stringdurhakabot"><img src="https://img.shields.io/badge/STRING-BOT-green?style=plastic&logo=Telegram"width="270" height="40"  /></a>
-<a href="https://t.me/kenkanrobot"><img src="https://img.shields.io/badge/BOT API HASH-DAN APP ID-gold?style=plastic&logo=Telegram&logoColor=yellow"width="270" height="40" /></a>
-</p>
 
 ## COMMAND ADMINS 🧑‍✈️
 
@@ -64,7 +60,7 @@ Terimakasih
 
 ### Mari terhubung!
 <p>
-    <a href="https://t.me/kenkanasw" target="blank"><img src="https://img.shields.io/badge/@kenkanasw-30302f?style=flat&logo=telegram"width="254" height="52"/></a>
-    <a href="https://t.me/musikkugroup" target="blank"><img src="https://img.shields.io/badge/MUSIK KU GROUP-black?style=flat&logo=telegram"width="319" height="52"/></a>
-    <a href="https://t.me/musikkuchannel" target="blank"><img src="https://img.shields.io/badge/MUSIK KU CHANNEL-gold?style=flat&logo=telegram"width="332" height="49"/></a>
+    <a href="https://t.me/kenkanasw" target="blank"><img src="https://img.shields.io/badge/@kenkanasw-30302f?style=flat&logo=telegram"/></a>
+    <a href="https://t.me/musikkugroup" target="blank"><img src="https://img.shields.io/badge/MUSIK KU GROUP-black?style=flat&logo=telegram"/></a>
+    <a href="https://t.me/musikkuchannel" target="blank"><img src="https://img.shields.io/badge/MUSIK KU CHANNEL-gold?style=flat&logo=telegram"/></a>
 </p>
