@@ -45,7 +45,8 @@
       },
       "MUST_JOIN": {
         "description": "Masukan ID dari Channel Atau Group Untuk Wajib Subscribenya",
-        "required": false
+        "required": true,
+        "value": "-100"
       },
       "OWNER_ID": {
         "description": "ID pengguna dari pengguna yang ingin Anda tambahkan sebagai PEMILIK. Beberapa nilai harus dipisahkan dengan spasi.",
