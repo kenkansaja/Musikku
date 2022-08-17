@@ -59,6 +59,5 @@ Terimakasih
 
 
 ### Mari terhubung!
-<p>
-    <a href="https://t.me/kenkanasw" target="blank"><img src="https://img.shields.io/badge/@kenkanasw-30302f?style=flat&logo=telegram"/></a>
-</p>
+
+<a href="https://t.me/kenkanasw"><img src="https://img.shields.io/badge/@kenkanasw-blue?style=flat&logo=telegram"/></a>
