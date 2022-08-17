@@ -88,8 +88,6 @@ def PlayWrapper(command):
             return await message.reply_text(
                 _["general_4"], reply_markup=upl
             )
-        if not MUST_JOIN:
-            continue
         if MUST_JOIN:
             try:
                 await app.get_chat_member(MUST_JOIN, message.from_user.id)
@@ -101,7 +99,8 @@ def PlayWrapper(command):
                     ]
                 )
                 return await message.reply_text(_["force_sub"].format(message.from_user.mention), reply_markup=kontol)
-            
+        else:
+            return  
 
         if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
