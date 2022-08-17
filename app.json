@@ -90,12 +90,12 @@
       },
       "SUPPORT_CHANNEL": {
         "description": "Tautan Channel Dukungan jika ada, Biarkan kosong jika tidak ada dukungan. Tautan Anda harus dimulai dengan https://t.me/",
-        "value": "https://t.me/musikkuchannel",
+        "value": "https://t.me/gabutan_escape",
         "required": false
       },
       "SUPPORT_GROUP": {
         "description": "Tautan Group Dukungan jika ada, Biarkan kosong jika tidak ada dukungan. Tautan Anda harus dimulai dengan https://t.me/",
-        "value": "https://t.me/musikkugroup",
+        "value": "https://t.me/aruna_mutual",
         "required": false
       }
     },
