@@ -88,18 +88,17 @@ def PlayWrapper(command):
             return await message.reply_text(
                 _["general_4"], reply_markup=upl
             )
-        if not MUST_JOIN:
-            return
-        try:
-            await app.get_chat_member(MUST_JOIN, message.from_user.id)
-        except UserNotParticipant:
-            sub = await app.export_chat_invite_link(MUST_JOIN)
-            kontol = InlineKeyboardMarkup(
+        if MUST_JOIN:
+            try:
+                await app.get_chat_member(MUST_JOIN, message.from_user.id)
+            except UserNotParticipant:
+                sub = await app.export_chat_invite_link(MUST_JOIN)
+                kontol = InlineKeyboardMarkup(
                     [
                         [InlineKeyboardButton("MUST JOIN", url=sub)]
                     ]
                 )
-            return await message.reply_text(_["force_sub"].format(message.from_user.mention), reply_markup=kontol)
+                return await message.reply_text(_["force_sub"].format(message.from_user.mention), reply_markup=kontol)
 
         if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
