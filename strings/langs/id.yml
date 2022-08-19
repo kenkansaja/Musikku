@@ -471,5 +471,5 @@ sug_22 : "Sekarang Anda dapat mengacak musik yang antri di bot.\n\nPerintah: /sh
 sug_23 : "Anda dapat memeriksa antrian musik.\n\nPerintah: /queue"
 sug_24 : "Anda dapat memeriksa pemilik saya dan pengguna sudo yang mengelola saya.\n\nPerintah: /sudolist"
 sug_25 : "Bot memiliki fitur yang disebut **Commands Delete Mode**. Bot ini akan menghapus perintah yang dieksekusi secara otomatis.\n\nAktifkan atau nonaktifkan deletemode dari /settings [__Diaktifkan secara default__]"
-sug_26 : "Anda dapat mengubah bahasa bot ke bahasa yang tersedia untuk memudahkan pemahaman.\n\nPerintah: /bahasa"
+sug_26 : "Anda dapat mengubah bahasa bot ke bahasa yang tersedia untuk memudahkan pemahaman.\n\nPerintah: /lang"
 sug_27 : "Bot memiliki fitur yang disebut **Force Play**.\n\n**Force Play** menghentikan trek yang sedang diputar di obrolan suara dan mulai memutar trek yang dicari secara instan tanpa mengganggu mengosongkan antrean.\n\nPerintah: /playforce"
