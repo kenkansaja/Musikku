@@ -201,7 +201,7 @@ tracks_2 : "**Error**\n\nTidak ada **{0} Top 10 Playlist** di server bot. Silaka
 # PERALATAN
 
 #Lirik
-lyrics_1 : "**Penggunaan:**\n\n/lirik [ Nama Musik]"
+lyrics_1 : "**Penggunaan:**\n\n/lyrics [ Nama Musik]"
 lyrics_2 : "Mencari Lirik"
 lyrics_3 : "❌ Gagal mengambil lirik😭.\n\n💡**Mencoba Mencari:** {0}"
 lyrics_4 : "Klik tombol di bawah ini dan cari lirik untuk menghindari pencarian lirik jenis spam yang panjang."
@@ -246,7 +246,7 @@ BACK_BUTTON : "⬅ Kembali"
 UNBAN_BUTTON : "🗑 Unban Asisten"
 
 #Lirik
-L_B_1 : "🚀 Periska Lyrics"
+L_B_1 : "🚀 Peiksa Lyrics"
 
 # Awal
 S_B_1 : "🗒 Perintah"
@@ -263,7 +263,7 @@ H_B_1 : "Perintah Admin"
 H_B_2 : "Mainkan Perintah"
 H_B_3 : "Perintah Bot"
 H_B_4 : "Perintah Ekstra"
-H_B_5 : "🗑 Close"
+H_B_5 : "🗑 Tutup"
 H_B_6 : "Perintah SudoUser"
 
 #PlayMode
