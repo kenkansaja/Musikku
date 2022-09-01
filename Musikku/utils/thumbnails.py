@@ -93,7 +93,7 @@ async def gen_thumb(videoid):
             (5, 5), f"{MUSIC_BOT_NAME}", fill="white", font=name_font
         )
         draw.text(
-            (600, 150),
+            (500, 100),
             "SEKARANG MEMUTAR",
             fill="white",
             stroke_width=2,
@@ -124,13 +124,13 @@ async def gen_thumb(videoid):
 
         draw.text(
             (600, 450),
-            f"Views : {views[:23]}",
+            f"Penonton : {views[:23]}",
             (255, 255, 255),
             font=arial,
         )
         draw.text(
             (600, 500),
-            f"Duration : {duration[:23]} Mins",
+            f"Durasi : {duration[:23]} Mins",
             (255, 255, 255),
             font=arial,
         )
