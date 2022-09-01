@@ -18,7 +18,7 @@ from ..logging import LOGGER
 
 class MusikkuBot(Client):
     def __init__(self):
-        LOGGER(__name__).info(f"Starting Bot")
+        LOGGER(__name__).info(f"Memulai Bot")
         super().__init__(
             "Musikku",
             api_id=config.API_ID,
@@ -33,7 +33,7 @@ class MusikkuBot(Client):
         self.id = get_me.id
         try:
             await self.send_message(
-                config.LOG_GROUP_ID, "Bot Started"
+                config.LOG_GROUP_ID, "Bot Dimulai"
             )
         except:
             LOGGER(__name__).error(
@@ -50,4 +50,4 @@ class MusikkuBot(Client):
             self.name = get_me.first_name + " " + get_me.last_name
         else:
             self.name = get_me.first_name
-        LOGGER(__name__).info(f"MusicBot Started as {self.name}")
+        LOGGER(__name__).info(f"MusicBot Dimulai Sebagai {self.name}")
