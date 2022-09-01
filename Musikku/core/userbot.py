@@ -53,18 +53,18 @@ class Userbot(Client):
         )
 
     async def start(self):
-        LOGGER(__name__).info(f"Starting Assistant Clients")
+        LOGGER(__name__).info(f"Memulai Klien Assistant")
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("aruna_mutual")
-                await self.one.join_chat("gabutan_escape")
+                await self.one.join_chat("CatatanAz")
+                await self.one.join_chat("zaspy")
             except:
                 pass
             assistants.append(1)
             try:
                 await self.one.send_message(
-                    config.LOG_GROUP_ID, "Assistant Started"
+                    config.LOG_GROUP_ID, "Asisten dimulai"
                 )
             except:
                 LOGGER(__name__).error(
@@ -82,7 +82,7 @@ class Userbot(Client):
             else:
                 self.one.name = get_me.first_name
             LOGGER(__name__).info(
-                f"Assistant Started as {self.one.name}"
+                f"Asisten Dimulai Sebagai {self.one.name}"
             )
         if config.STRING2:
             await self.two.start()
