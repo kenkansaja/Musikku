@@ -1,4 +1,4 @@
-<h1><p align="center"><a>𝙈𝙐𝙎𝙄𝙆  𝙆𝙐</a><p/><h1/>
+<h1><p align="center"><a>EIKO MUSIC</a><p/><h1/>
 <p align="left"><a href="https://github.com/EmiliaTzy/Musikku"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeqC70Mvr59Ntp9p0DbjkNqmdpMvVeqXjZqQ&usqp=CAU"width="300"heigh="100" /></a></p>
 
 ---
@@ -24,7 +24,7 @@ ___
 <a href="https://t.me/kenkanrobot"><img src="https://img.shields.io/badge/BOT API HASH-DAN APP ID-gold?style=plastic&logo=Telegram&logoColor=yellow"width="270" height="40" /></a>
 </p>
 
-## COMMAND ADMINS 🧑‍✈️
+## PERINTAH ADMIN 🧑‍✈️
 
 - c = adalah singkatan dari pemutaran channel
 - /pause atau /cpause - Menjeda musik yang sedang diputar.
@@ -35,7 +35,7 @@ ___
 - /stop atau /cstop- Menghentikan pemutaran musik.
 - /shuffle atau /cshuffle- Secara acak mengacak daftar putar yang antri.
 
-## COMMAND MEMBERS 👥
+## PERINTAH MEMBER 👥
 - /play atau /vplay atau /cplay - Bot akan mulai memainkan kueri yang Anda berikan pada obrolan suara.
 
 - /stream atau /cstream - Streaming tautan langsung di obrolan suara.
@@ -44,7 +44,7 @@ ___
 ## DEPLOY VPS
 Nih kak cara deploy di vps
 ```console
-musikku@musikku$ git clone https://github.com/kenkansaja/Musikku
+musikku@musikku$ git clone https://github.com/EmiliaTzy/Musikku
 musikku@musikku$ cd Musikku
 musikku@musikku$ bash setup
 musikku@musikku$ screen -S Musikku
