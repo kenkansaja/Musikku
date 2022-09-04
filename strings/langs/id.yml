@@ -240,8 +240,8 @@ stream_4 : "🎥 **Memulai Streaming** 💡\n\n**📀 Judul:** [{0}]({1})\n⏰ *
 # Tombol Sebaris
 
 #Tombol Umum
-CLOSE_BUTTON : "🗑 Tutup"
-CLOSEMENU_BUTTON : "🗑 Tutup Menu"
+CLOSE_BUTTON : "✘"
+CLOSEMENU_BUTTON : "✘"
 BACK_BUTTON : "⬅ Kembali"
 UNBAN_BUTTON : "🗑 Unban Asisten"
 
@@ -255,7 +255,7 @@ S_B_3 : "📨 Group"
 S_B_4 : "📨 Channel"
 S_B_5 : "✚ Tambahkan saya ke Grup Anda"
 S_B_6 : "💾 Git Repo"
-S_B_7 : "🧸 Pemilik Bot"
+S_B_7 : "✨ Pemilik Bot"
 S_B_8 : "🗂 Menu Perintah"
 
 #Membantu
@@ -263,7 +263,7 @@ H_B_1 : "Perintah Admin"
 H_B_2 : "Mainkan Perintah"
 H_B_3 : "Perintah Bot"
 H_B_4 : "Perintah Ekstra"
-H_B_5 : "🗑 Tutup"
+H_B_5 : "✘"
 H_B_6 : "Perintah SudoUser"
 
 #PlayMode
@@ -280,7 +280,7 @@ P_B_4 : "🎵 Putar Playlist"
 #Daftar Putar
 PL_B_1 : "🚀 Putar Daftar Putar"
 PL_B_2 : "✚ Daftar Putar"
-PL_B_3 : "🗂 Menu"
+PL_B_3 : "🗃 Menu"
 PL_B_4 : "📡 Mode Putar"
 PL_B_5 : "🔄 Hapus Seluruh Daftar Putar"
 PL_B_6 : "↗️ Hapus Daftar Putar"
@@ -296,7 +296,7 @@ ST_B_2 : "🎥 Kualitas Video"
 ST_B_3 : "🎩 Pengguna Auth"
 ST_B_4 : "📱 Dasbor"
 ST_B_5 : "▶️ Mode Putar"
-ST_B_6 : "🏳️‍🌈 Bahasa"
+ST_B_6 : "🌐 Bahasa"
 ST_B_7 : "🔄 Mode Bersih"
 ST_B_8 : "{0} Audio Kualitas Rendah"
 ST_B_9 : "{0} Audio Kualitas Sedang"
@@ -432,8 +432,8 @@ pbot_13 : "\n**<b>Obrolan Tidak Diambil:</b>**\n\n"
 
 
 #Gbanned
-gban_1 : "Kamu mau gban sendiri? Bodoh!"
-gban_2 : "Haruskah saya memblokir diri saya sendiri? Lol"
+gban_1 : "Kamu mau gban sendiri? Hadeh!"
+gban_2 : "Haruskah saya memblokir diri saya sendiri? psrah"
 gban_3 : "Anda ingin memblokir pengguna sudo?"
 gban_4 : "{0} sudah **gbanned** dari bot."
 gban_5 : "**Menginisialisasi Larangan Gobal pada {0}**\n\nWaktu yang Diharapkan : {1}."
@@ -470,6 +470,6 @@ sug_21 : "Bot memiliki opsi daftar putar sisi server.\n\nAnda dapat menambahkan 
 sug_22 : "Sekarang Anda dapat mengacak musik yang antri di bot.\n\nPerintah: /shuffle"
 sug_23 : "Anda dapat memeriksa antrian musik.\n\nPerintah: /queue"
 sug_24 : "Anda dapat memeriksa pemilik saya dan pengguna sudo yang mengelola saya.\n\nPerintah: /sudolist"
-sug_25 : "Bot memiliki fitur yang disebut **Commands Delete Mode**. Bot ini akan menghapus perintah yang dieksekusi secara otomatis.\n\nAktifkan atau nonaktifkan deletemode dari /settings [__Diaktifkan secara default__]"
+sug_25 : "Bot memiliki fitur yang disebut **Mode Hapus Perintah**. Bot ini akan menghapus perintah yang dieksekusi secara otomatis.\n\nAktifkan atau nonaktifkan mode hapus dari /settings [__Diaktifkan secara default__]"
 sug_26 : "Anda dapat mengubah bahasa bot ke bahasa yang tersedia untuk memudahkan pemahaman.\n\nPerintah: /bahasa"
 sug_27 : "Bot memiliki fitur yang disebut **Force Play**.\n\n**Force Play** menghentikan trek yang sedang diputar di obrolan suara dan mulai memutar trek yang dicari secara instan tanpa mengganggu mengosongkan antrean.\n\nPerintah: /playforce"
