@@ -22,9 +22,10 @@ from Musikku.utils.decorators import (ActualAdminCB, language,
 
 
 def lanuages_keyboard(_):
-        keyboard = InlineKeyboard(row_width=2)
+        keyboard = InlineKeyboard(row_width=3)
         keyboard.row(
-            InlineKeyboardButton(text="🏴󠁧󠁢󠁥󠁮󠁧󠁿 English", callback_data=f"languages:en"),
+            InlineKeyboardButton(text="🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inggris", callback_data=f"languages:en"),
+            InlineKeyboardButton(text="🇹🇷 Turki", callback_data=f"languages:tr"),
             InlineKeyboardButton(text="🇮🇩 Indonesia", callback_data=f"languages:id"),
         )
         keyboard.row(
@@ -79,17 +80,17 @@ async def language_markup(client, CallbackQuery, _):
     old = await get_lang(CallbackQuery.message.chat.id)
     if str(old) == str(langauge):
         return await CallbackQuery.answer(
-            "You're already on same language", show_alert=True
+            "Anda sudah menggunakan bahasa yang sama", show_alert=True
         )
     await set_lang(CallbackQuery.message.chat.id, langauge)
     try:
         _ = get_string(langauge)
         await CallbackQuery.answer(
-            "Successfully changed your language.", show_alert=True
+            "Berhasil mengubah bahasa Anda.", show_alert=True
         )
     except:
         return await CallbackQuery.answer(
-            "Failed to change language or Language under update.",
+            "Gagal mengubah bahasa atau bahasa dalam pembaruan.",
             show_alert=True,
         )
     await set_lang(CallbackQuery.message.chat.id, langauge)
