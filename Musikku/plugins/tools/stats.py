@@ -115,7 +115,7 @@ async def gstats_global(client, message: Message, _):
         vidid,
     ) = await YouTube.details(videoid, True)
     title = title.title()
-    final = f"Top Most Played Track on {MUSIC_BOT_NAME}\n\n**Title:** {title}\n\nPlayed** {co} **times"
+    final = f"Top Track Yang Sering Diputar Di {MUSIC_BOT_NAME}\n\n**Judul:** {title}\n\nDiputar** {co} *kali"
     upl = get_stats_markup(
         _, True if message.from_user.id in SUDOERS else False
     )
@@ -142,17 +142,17 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
     mystic = await CallbackQuery.edit_message_text(
         _["gstats_3"].format(
             f"of {CallbackQuery.message.chat.title}"
-            if what == "Here"
+            if what == "Disini"
             else what
         )
     )
-    if what == "Tracks":
+    if what == "Track":
         stats = await get_global_tops()
-    elif what == "Chats":
+    elif what == "Obrolan":
         stats = await get_top_chats()
-    elif what == "Users":
+    elif what == "Pengguna":
         stats = await get_topp_users()
-    elif what == "Here":
+    elif what == "Disini":
         stats = await get_particulars(chat_id)
     if not stats:
         await asyncio.sleep(1)
@@ -164,7 +164,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
         for i in stats:
             top_list = (
                 stats[i]
-                if what in ["Chats", "Users"]
+                if what in ["Obrolan", "Pengguna"]
                 else stats[i]["spot"]
             )
             results[str(i)] = top_list
@@ -180,7 +180,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
         msg = ""
         limit = 0
         total_count = 0
-        if what in ["Tracks", "Here"]:
+        if what in ["Track", "Disini"]:
             for items, count in list_arranged.items():
                 total_count += count
                 if limit == 10:
@@ -189,9 +189,9 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
                 details = stats.get(items)
                 title = (details["title"][:35]).title()
                 if items == "telegram":
-                    msg += f"🔗[Telegram Files and Audios](https://t.me/telegram) ** played {count} times**\n\n"
+                    msg += f"🔗[File Telegram Dan Audio(https://t.me/telegram) ** diputar {count} kali**\n\n"
                 else:
-                    msg += f"🔗 [{title}](https://www.youtube.com/watch?v={items}) ** played {count} times**\n\n"
+                    msg += f"🔗 [{title}](https://www.youtube.com/watch?v={items}) ** diputar {count} kali**\n\n"
 
             temp = (
                 _["gstats_4"].format(
@@ -201,7 +201,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
                     total_count,
                     limit,
                 )
-                if what == "Tracks"
+                if what == "Track"
                 else _["gstats_7"].format(
                     len(stats), total_count, limit
                 )
@@ -217,14 +217,14 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
         print(e)
         return
     limit = 0
-    if what in ["Users", "Chats"]:
+    if what in ["Pengguna", "Obrolan"]:
         for items, count in list_arranged.items():
             if limit == 10:
                 break
             try:
                 extract = (
                     (await app.get_users(items)).first_name
-                    if what == "Users"
+                    if what == "Pengguna"
                     else (await app.get_chat(items)).title
                 )
                 if extract is None:
@@ -233,10 +233,10 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
             except:
                 continue
             limit += 1
-            msg += f"🔗`{extract}` played {count} times on bot.\n\n"
+            msg += f"🔗`{extract}` diputar {count} kali dalam bot.\n\n"
         temp = (
             _["gstats_5"].format(limit, MUSIC_BOT_NAME)
-            if what == "Chats"
+            if what == "Obrolan"
             else _["gstats_6"].format(limit, MUSIC_BOT_NAME)
         )
         msg = temp + msg
@@ -281,23 +281,23 @@ async def overall_stats(client, CallbackQuery, _):
     else:
         ass = "No"
     cm = config.CLEANMODE_DELETE_MINS
-    text = f"""**Bot's Stats and Information:**
+    text = f"""**Stats Dan Informasi Bot:**
 
-**Imported Modules:** {mod}
-**Served Chats:** {served_chats} 
-**Served Users:** {served_users} 
-**Blocked Users:** {blocked} 
-**Sudo Users:** {sudoers} 
+**Impor Modul:** {mod}
+**Server Obrolan:** {served_chats} 
+**Served Pengguna:** {served_users} 
+**Blokir Pengguna:** {blocked} 
+**Pengguna Sudo:** {sudoers} 
     
-**Total Queries:** {total_queries} 
-**Total Assistants:** {assistant}
-**Auto Leaving Assistant:** {ass}
-**Cleanmode duration:** {cm} Mins
+**Total Pencarian:** {total_queries} 
+**Total Asisten:** {assistant}
+**Otomatis Keluar Asisten:** {ass}
+**Durasi Mode Hapus:** {cm} Menit
 
-**Play Duration Limit:** {play_duration} Mins
-**Song Download Limit:** {song} Mins
-**Bot's Server Playlist Limit:** {playlist_limit}
-**Playlist Play Limit:** {fetch_playlist}"""
+**Batas Durasi Diputar:** {play_duration} Menit
+**Batas Mengunduh Lagu:** {song} Menit
+**Batas Playlist Di Bot Server:** {playlist_limit}
+**Batas Diputar Playlist:** {fetch_playlist}"""
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
         await CallbackQuery.edit_message_media(
@@ -314,7 +314,7 @@ async def overall_stats(client, CallbackQuery, _):
 async def overall_stats(client, CallbackQuery, _):
     if CallbackQuery.from_user.id not in SUDOERS:
         return await CallbackQuery.answer(
-            "Only for Sudo Users", show_alert=True
+            "Hanya Khusus Pengguna Sudo", show_alert=True
         )
     callback_data = CallbackQuery.data.strip()
     what = callback_data.split(None, 1)[1]
@@ -366,35 +366,35 @@ async def overall_stats(client, CallbackQuery, _):
     total_queries = await get_queries()
     blocked = len(BANNED_USERS)
     sudoers = len(await get_sudoers())
-    text = f""" **Bot's Stats and Information:**
+    text = f""" **Stats Dan Informasi Bot:**
 
-**Imported Modules:** {mod}
+**Impor Modul:** {mod}
 **Platform:** {sc}
 **Ram:** {ram}
 **Physical Cores:** {p_core}
 **Total Cores:** {t_core}
-**Cpu Frequency:** {cpu_freq}
+**Frekuensi Cpu:** {cpu_freq}
 
-**Python Version :** {pyver.split()[0]}
-**Pyrogram Version :** {pyrover}
-**Py-TgCalls Version :** {pytgver}
+**Versi Python :** {pyver.split()[0]}
+**Versi Pyrogram :** {pyrover}
+**Versi Py-TgCalls :** {pytgver}
 
-**Storage Avail:** {total[:4]} GiB
-**Storage Used:** {used[:4]} GiB
-**Storage Left:** {free[:4]} GiB
+**Penyimpanan Tersedia:** {total[:4]} GiB
+**Penyimpanan Terpakai:** {used[:4]} GiB
+**Penyimpanan Kosong:** {free[:4]} GiB
 
-**Served Chats:** {served_chats} 
-**Served Users:** {served_users} 
-**Blocked Users:** {blocked} 
-**Sudo Users:** {sudoers} 
+**Server Obrolan:** {served_chats} 
+**Server Pengguna:** {served_users} 
+**Blokir Pengguna:** {blocked} 
+**Pengguna Sudo:** {sudoers} 
 
-**Mongo Uptime:** {mongouptime[:4]} Days
-**Total DB Size:** {datasize[:6]} Mb
-**Total DB Storage:** {storage} Mb
-**Total DB Collections:** {collections}
+**Mongo Uptime:** {mongouptime[:4]} Hari
+**Total DB Ukuran:** {datasize[:6]} Mb
+**Total DB Penyimpanan:** {storage} Mb
+**Total DB Koleksi:** {collections}
 **Total DB Keys:** {objects}
-**Total DB Queries:** `{query}`
-**Total Bot Queries:** `{total_queries} `
+**Total DB Pencarian:** `{query}`
+**Total Bot Pencarian:** `{total_queries} `
     """
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
