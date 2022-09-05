@@ -130,7 +130,7 @@ async def gen_thumb(videoid):
         )
         draw.text(
             (600, 500),
-            f"Durasi : {duration[:23]} Mins",
+            f"Durasi : {duration[:23]} Menit",
             (255, 255, 255),
             font=arial,
         )
