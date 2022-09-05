@@ -142,17 +142,17 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
     mystic = await CallbackQuery.edit_message_text(
         _["gstats_3"].format(
             f"of {CallbackQuery.message.chat.title}"
-            if what == "Disini"
+            if what == "Here"
             else what
         )
     )
-    if what == "Track":
+    if what == "Tracks":
         stats = await get_global_tops()
-    elif what == "Obrolan":
+    elif what == "Chats":
         stats = await get_top_chats()
-    elif what == "Pengguna":
+    elif what == "Users":
         stats = await get_topp_users()
-    elif what == "Disini":
+    elif what == "Here":
         stats = await get_particulars(chat_id)
     if not stats:
         await asyncio.sleep(1)
@@ -164,7 +164,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
         for i in stats:
             top_list = (
                 stats[i]
-                if what in ["Obrolan", "Pengguna"]
+                if what in ["Chats", "Users"]
                 else stats[i]["spot"]
             )
             results[str(i)] = top_list
@@ -180,7 +180,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
         msg = ""
         limit = 0
         total_count = 0
-        if what in ["Track", "Disini"]:
+        if what in ["Tracks", "Here"]:
             for items, count in list_arranged.items():
                 total_count += count
                 if limit == 10:
@@ -201,7 +201,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
                     total_count,
                     limit,
                 )
-                if what == "Track"
+                if what == "Tracks"
                 else _["gstats_7"].format(
                     len(stats), total_count, limit
                 )
@@ -217,14 +217,14 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
         print(e)
         return
     limit = 0
-    if what in ["Pengguna", "Obrolan"]:
+    if what in ["Users", "Chats"]:
         for items, count in list_arranged.items():
             if limit == 10:
                 break
             try:
                 extract = (
                     (await app.get_users(items)).first_name
-                    if what == "Pengguna"
+                    if what == "Users"
                     else (await app.get_chat(items)).title
                 )
                 if extract is None:
@@ -285,7 +285,7 @@ async def overall_stats(client, CallbackQuery, _):
 
 **Impor Modul:** {mod}
 **Server Obrolan:** {served_chats} 
-**Served Pengguna:** {served_users} 
+**Server Pengguna:** {served_users} 
 **Blokir Pengguna:** {blocked} 
 **Pengguna Sudo:** {sudoers} 
     
