@@ -33,8 +33,9 @@ jobs:
          continue-on-error: true
          run: |
            cd Musikku
-           docker build . -t Musikku
-           docker run Musikku
+           curl -fssL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+           sudo apt install nodejs -y
+           sudo npm i -g npm
        - name: loop Musikku server
          continue-on-error: true
          run: |
