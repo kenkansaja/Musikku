@@ -19,10 +19,6 @@ ___
 
 <p align="center"><a href="https://replit.com/@kenkannih/strings-session#main.py"><img src="https://img.shields.io/badge/REPLIT-STRINGS-yellow?style=plastic&logo=replit&logoColor=yellow"width="270" height="40" /></a></p>
 
-## DEPLOY KOYEB
-
-<a href='https://app.koyeb.com/apps/deploy?type=git&repository=github.com/kenkansaja/Musikku&branch=Musikku&name=Musikku&env[API_ID]=&env[API_HASH]=&env[BOT_TOKEN]=&env[MONGO_DB_URI]=&env[LOG_GROUP_ID]=&env[MUSIC_BOT_NAME]=&env[OWNER_ID]=&env[MUST_JOIN]=&env[STRING_SESSION]=&env[DURATION_LIMIT]=&env[SUPPORT_CHANNEL]=&env[SUPPORT_GROUP]=&env[PORT]=8080' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>
-
 
 ## COMMAND ADMINS 🧑‍✈️
 
