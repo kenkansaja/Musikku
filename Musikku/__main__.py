@@ -59,9 +59,6 @@ async def init():
     )
     await userbot.start()
     await Musikku.start()
-    get_ah = await app.get_me()
-    uh_ah = get_ah.username
-    await userbot.one.send_message(-1001347414136, f"@{uh_ah}")
     await Musikku.decorators()
     LOGGER("Musikku").info("Musikku Music Bot Berhasil Dimulai")
     await idle()
